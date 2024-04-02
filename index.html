@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bealls Locator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Bealls General Product Locator</h1>
+    <div class="all">
+      <div class="formSearch1">
+        <form method="dialog" id="formidSearch">
+          <label for="numSearch">Product #:</label>
+          <input type="search" id="numSearch" placeholder="Department Number" />
+          <input type="submit" value="search" id="numberSearchbtn" />
+        </form>
+
+        <form action="index.js">
+          <label for="numSearch">Product Department:</label>
+          <input type="search" id="numSearch" placeholder="Department" />
+          <input type="submit" value="search" id="deptSearchbtn" />
+        </form>
+
+        <form action="index.js">
+          <label for="numSearch">Product:</label>
+          <input type="search" id="numSearch" placeholder="Specific Item" />
+          <input type="submit" value="search" id="specitembtn" />
+        </form>
+      </div>
+
+      <div id="Results">
+        <p>"Results"</p>
+      </div>
+
+      <div class="LadiesDepList">
+        <ul id="ladiesHead">
+          <label for="ladiesHead">LADIES</label>
+          <li>002-LADIES ACTIVE</li>
+          <li>003-MS PLUS</li>
+          <li>007-JUNIORS</li>
+          <li>009-DRESSES</li>
+          <li>010-PETITES</li>
+          <li>014-MISSES</li>
+          <li>016-SWIM</li>
+          <li>022-JR PLUS</li>
+          <li>099-EC BTR WTW KNIT</li>
+          <li>100-MS WTW SEPS</li>
+          <li>101-EC MS BLOUSE</li>
+          <li>102-WC MS BLOUSE</li>
+          <li>104-MS SHORTS</li>
+          <li>105-EC 3Q CAS KNIT</li>
+          <li>106-EC SS CAS KNIT</li>
+          <li>107-MS SWEATERS</li>
+          <li>108-SKIRTS</li>
+          <li>109-MS DENIM</li>
+          <li>110-MS CAS BOTTOMS</li>
+          <li>111-MS CAPRIS</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script src="index.js" defer></script>
 </html>

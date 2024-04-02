@@ -1,0 +1,18 @@
+.all {
+  border: solid black;
+  padding: 10px;
+}
+
+.formSearch1 {
+  border: solid black 1px;
+  padding: 5px;
+}
+
+#Results {
+  border: solid black 1px;
+}
+
+.LadiesDepList {
+  border: solid black 1px;
+  padding: 1px;
+}
