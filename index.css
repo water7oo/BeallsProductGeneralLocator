@@ -12,7 +12,11 @@
   border: solid black 1px;
 }
 
-.LadiesDepList {
+#StoreDepartments {
   border: solid black 1px;
   padding: 1px;
+}
+.subDepartments {
+  border: 10px solid black;
+  padding: 20px;
 }

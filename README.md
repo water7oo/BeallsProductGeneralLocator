@@ -17,3 +17,9 @@ User can only enter key words like outdoor,swim,ms,boys,girls,toys etc. into the
 Add a dropdown option that only shows that specific department
 
 When user clicks results a pop up will instantiate and user will be greeted with a top down map of the store with a price input
+
+---
+
+Notes
+
+Put all departments in store Department listings, have the user input 3 numbers, iterate over all store ul li listings and display the full product string and department that it belongs in
