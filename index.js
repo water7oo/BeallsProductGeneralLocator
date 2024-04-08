@@ -5,7 +5,17 @@
 //Take that current array and say if the users submission equals the first 3 elements on the array list
 
 const numberSubmit = document.getElementById("formidSearch");
-
+const departmentSelect = document.getElementById("departmentSelect");
+const keySearcher = document.getElementById("productSearch");
+const totalDepartments = document.getElementById("StoreDepartments");
+const storeRegistry = [
+  ladiesItoS,
+  mensItoS,
+  ShoesItoS,
+  YouthItoS,
+  HTItoS,
+  AIBItoS,
+];
 var ladieslist = document.getElementById("ladiesHead");
 var LadiesArray = Array.from(ladieslist.getElementsByTagName("li"));
 //uses map function to iterate through all elements and reads out their string info
@@ -73,7 +83,8 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(ladiesItoS[i]);
-      results.innerHTML = ladiesItoS[i] + " DEPARTMENT:  " + ladiesLabel;
+      results.innerHTML =
+        ladiesItoS[i] + " DEPARTMENT:  " + ladiesLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -83,7 +94,8 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(mensItoS[i]);
-      results.innerHTML = mensItoS[i] + " DEPARTMENT:  " + mensLabel;
+      results.innerHTML =
+        mensItoS[i] + " DEPARTMENT:  " + mensLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -93,7 +105,8 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(AIBItoS[i]);
-      results.innerHTML = AIBItoS[i] + " DEPARTMENT:  " + AIBLabel;
+      results.innerHTML =
+        AIBItoS[i] + " DEPARTMENT:  " + AIBLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -103,7 +116,8 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(ShoesItoS[i]);
-      results.innerHTML = ShoesItoS[i] + " DEPARTMENT:  " + ShoesLabel;
+      results.innerHTML =
+        ShoesItoS[i] + " DEPARTMENT:  " + ShoesLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -113,7 +127,8 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(YouthItoS[i]);
-      results.innerHTML = YouthItoS[i] + " DEPARTMENT:  " + YouthLabel;
+      results.innerHTML =
+        YouthItoS[i] + " DEPARTMENT:  " + YouthLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -123,7 +138,8 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(HomeItoS[i]);
-      results.innerHTML = HomeItoS[i] + " DEPARTMENT:  " + HomeLabel;
+      results.innerHTML =
+        HomeItoS[i] + " DEPARTMENT:  " + HomeLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -133,7 +149,7 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(HTItoS[i]);
-      results.innerHTML = HTItoS[i] + " DEPARTMENT:  " + HTLabel;
+      results.innerHTML = HTItoS[i] + " DEPARTMENT:  " + HTLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -141,10 +157,110 @@ numberSubmit.addEventListener("submit", function searchNumber() {
   results.innerHTML = noresults;
 });
 
-console.log(ladiesItoS);
-console.log(mensItoS);
-console.log(AIBItoS);
-console.log(YouthItoS);
-console.log(ShoesItoS);
-console.log(HomeItoS);
-console.log(HTItoS);
+// // ONlY DISPLAYS ITEMS WITH THOSE KEY WORDS
+departmentSelect.addEventListener("change", function filterItems() {
+  var selectedFilter = departmentSelect.value;
+
+  //Debug
+  if (selectedFilter === "None") {
+    ladieslist.style.display = "none";
+    menslist.style.display = "none";
+    Youthlist.style.display = "none";
+    Shoeslist.style.display = "none";
+    HTlist.style.display = "none";
+    AIBlist.style.display = "none";
+    Homelist.style.display = "none";
+  }
+
+  //ALL departments
+  if (selectedFilter === "ALL") {
+    ladieslist.style.display = "block";
+    menslist.style.display = "block";
+    Youthlist.style.display = "block";
+    Shoeslist.style.display = "block";
+    HTlist.style.display = "block";
+    AIBlist.style.display = "block";
+    Homelist.style.display = "block";
+  }
+
+  //Only Ladies
+  if (selectedFilter === "Ladies") {
+    ladieslist.style.display = "block";
+    menslist.style.display = "none";
+    Youthlist.style.display = "none";
+    Shoeslist.style.display = "none";
+    HTlist.style.display = "none";
+    AIBlist.style.display = "none";
+    Homelist.style.display = "none";
+  }
+  //Only Mens
+  if (selectedFilter === "Mens") {
+    ladieslist.style.display = "none";
+    menslist.style.display = "block";
+    Youthlist.style.display = "none";
+    Shoeslist.style.display = "none";
+    HTlist.style.display = "none";
+    AIBlist.style.display = "none";
+    Homelist.style.display = "none";
+  }
+  //Only Youth
+  if (selectedFilter === "Youth") {
+    ladieslist.style.display = "none";
+    menslist.style.display = "none";
+    Youthlist.style.display = "block";
+    Shoeslist.style.display = "none";
+    HTlist.style.display = "none";
+    AIBlist.style.display = "none";
+    Homelist.style.display = "none";
+  }
+
+  //Only Home
+  if (selectedFilter === "Home") {
+    ladieslist.style.display = "none";
+    menslist.style.display = "none";
+    Youthlist.style.display = "none";
+    Shoeslist.style.display = "none";
+    HTlist.style.display = "none";
+    AIBlist.style.display = "none";
+    Homelist.style.display = "block";
+  }
+
+  //Only HT
+  if (selectedFilter === "HardlineToys") {
+    ladieslist.style.display = "none";
+    menslist.style.display = "none";
+    Youthlist.style.display = "none";
+    Shoeslist.style.display = "none";
+    HTlist.style.display = "block";
+    AIBlist.style.display = "none";
+    Homelist.style.display = "none";
+  }
+
+  //Only Shoes
+  if (selectedFilter === "Shoes") {
+    ladieslist.style.display = "none";
+    menslist.style.display = "none";
+    Youthlist.style.display = "none";
+    Shoeslist.style.display = "block";
+    HTlist.style.display = "none";
+    AIBlist.style.display = "none";
+    Homelist.style.display = "none";
+  }
+  //Only Accessories
+  if (selectedFilter === "Accessories") {
+    ladieslist.style.display = "none";
+    menslist.style.display = "none";
+    Youthlist.style.display = "none";
+    Shoeslist.style.display = "none";
+    HTlist.style.display = "none";
+    AIBlist.style.display = "block";
+    Homelist.style.display = "none";
+  }
+});
+
+keySearcher.addEventListener("submit", function KeywordSearch() {
+  //If string in search bar === any of the strings in store -->
+  //only display the items with that string
+
+  console.log("WOKRINGGN");
+});

@@ -1,12 +1,22 @@
 # BeallsProductGeneralLocator
 
-Product Number Search: Enter 3 digits and get the products department number/name and department that it belongs to
+Site will start off with some buttons, product locator, tagging center, department database spreadsheet
 
-Product Department: Entering in the specific department only highlights the array'd items with that specific department "id" attached to it (eg. entering ladies will give you all the products with the ladies tag)
+Product Locator:
 
-Product: Entering in a word like "MS" or "OUTDOOR" or "SWIM" will give you departments with those specific items
+Product Number Search: Enter 3 digits and get the products department number/name and department that it belongs to. It will display a pop up
 
-Clicking/Tapping the results will show a pop up that has a price manager and a map fo the store that that specific item goes to. entering in the specific price will tell you whether or not it needs a tag or not.
+Product Department: Ability to filter departments so it only shows specific ones 
+
+Product: Entering in a word like "MS" or "OUTDOOR" or "SWIM" will only show departments with those key words
+
+_There will be a filtering option below to only show a certain department_
+
+Tagging Center:
+
+There will be an image displaying the conversion and tagging forms displayed in the stockroom
+
+Enter the 3 digits of a product + the price to see if it needs a tag or not
 
 ---
 
