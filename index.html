@@ -13,13 +13,13 @@
     <div class="all">
       <div class="formSearch1">
         <form method="dialog" id="formidSearch">
-          <label for="numSearch">Product #:</label>
+          <label for="numSearch">Product Number:</label>
           <input type="search" id="numSearch" placeholder="Department Number" />
           <input type="submit" value="search" id="numberSearchbtn" />
         </form>
 
         <form method="dialog">
-          <label for="cars">Filter Departments</label>
+          <label for="cars">Department Filter</label>
           <select name="departments" id="departmentSelect">
             <option value="ALL">ALL</option>
             <option value="None">None</option>
@@ -34,9 +34,8 @@
         </form>
 
         <form method="dialog" id="productSearch">
-          <label for="productSearch">Product:</label>
+          <label for="productSearch">Keyword:</label>
           <input type="search" id="keywordSearch" placeholder="Specific Item" />
-          <input type="submit" value="search" id="productSearchBtn" />
         </form>
       </div>
 
@@ -46,6 +45,8 @@
 
       <div id="StoreDepartments">
         <ul id="storeDepartmentsListing"></ul>
+
+        <button type="button" class="collapsible">LADIES</button>
         <div class="LadiesDepList">
           <ul id="ladiesHead">
             <label for="ladiesHead" id="ladieslabel" class="Department"

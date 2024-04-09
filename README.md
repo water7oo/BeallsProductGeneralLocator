@@ -6,8 +6,7 @@ Product Locator:
 
 Product Number Search: Enter 3 digits and get the products department number/name and department that it belongs to. It will display a pop up
 
-Product Department: Ability to filter departments so it only shows specific ones 
-
+Product Department: Ability to filter departments so it only shows specific ones
 Product: Entering in a word like "MS" or "OUTDOOR" or "SWIM" will only show departments with those key words
 
 _There will be a filtering option below to only show a certain department_
@@ -32,4 +31,8 @@ When user clicks results a pop up will instantiate and user will be greeted with
 
 Notes
 
-Put all departments in store Department listings, have the user input 3 numbers, iterate over all store ul li listings and display the full product string and department that it belongs in
+Web App will start off with 2 options; Bealls Tagging Center or Bealls Product Registry
+
+When User looks up product number a pop up will show up with a map of the store of where that Item goes as well as the department it belongs to
+
+Tagging center will include a conversion sheet input

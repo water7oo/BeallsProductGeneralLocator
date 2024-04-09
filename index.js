@@ -258,9 +258,51 @@ departmentSelect.addEventListener("change", function filterItems() {
   }
 });
 
-keySearcher.addEventListener("submit", function KeywordSearch() {
-  //If string in search bar === any of the strings in store -->
-  //only display the items with that string
+keySearcher.addEventListener("input", function KeywordSearch(event) {
+  event.preventDefault(); // Prevents the form from submitting and refreshing the page
 
-  console.log("WOKRINGGN");
+  // If string in search bar === any of the strings in store -->
+  // only display the items with that string
+  var storeListing = document.querySelectorAll("ul");
+
+  var KeywordInput = document
+    .getElementById("keywordSearch")
+    .value.toLowerCase();
+
+  storeListing.forEach(function (ulElement) {
+    var listings = ulElement.querySelectorAll("li");
+    var matched = false;
+    console.log(listings);
+
+    listings.forEach(function (item) {
+      var text = item.textContent.toLowerCase();
+      if (text.includes(KeywordInput)) {
+        item.style.display = "block";
+        matched = true;
+      } else {
+        item.style.display = "none";
+      }
+
+      if (!matched) {
+        ulElement.style.display = "none";
+      } else {
+        ulElement.style.display = "block";
+      }
+    });
+  });
 });
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
