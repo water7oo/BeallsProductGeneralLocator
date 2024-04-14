@@ -3,24 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
     <title>Bealls Locator</title>
     <link rel="stylesheet" href="index.css" />
 
     <link rel="shortcut icon" type="image/png" href="favicon.ico" />
   </head>
   <body>
-    <center><h1>Bealls General Product Locator</h1></center>
-    <div class="all">
-      <div class="formSearch1">
-        <form method="dialog" id="formidSearch">
-          <label for="numSearch">Product Number:</label>
-          <input type="search" id="numSearch" placeholder="Department Number" />
-          <input type="submit" value="search" id="numberSearchbtn" />
-        </form>
+    <div id="headerTop">
+      <button id="goBack">back</button>
+      <center><h1>Product Locator</h1></center>
+    </div>
 
+    <div class="all">
+      <div id="Results">
+        <p></p>
+      </div>
+
+      <div class="formSearch1">
+        <button id="ClearContents">CLEAR</button>
+        <div class="formSpace"></div>
+        <form method="dialog" id="formidSearch">
+          <label for="numSearch"></label>
+          <input
+            type="search"
+            class="UserInput"
+            id="numSearch"
+            placeholder="Department #"
+            inputmode="numeric"
+          />
+        </form>
+        <div class="formSpace"></div>
+        <form method="dialog" id="productSearch">
+          <label for="productSearch"></label>
+          <input
+            type="search"
+            class="UserInput"
+            id="keywordSearch"
+            placeholder="Specific Search"
+          />
+        </form>
+        <div class="formSpace"></div>
         <form method="dialog">
-          <label for="cars">Department Filter</label>
-          <select name="departments" id="departmentSelect">
+          <label for="cars"></label>
+          <select name="departments" id="departmentSelect" class="UserInput">
             <option value="ALL">ALL</option>
             <option value="None">None</option>
             <option value="Ladies">LADIES</option>
@@ -32,679 +58,685 @@
             <option value="HardlineToys">HARDLINE/TOYS</option>
           </select>
         </form>
-
-        <form method="dialog" id="productSearch">
-          <label for="productSearch">Keyword:</label>
-          <input type="search" id="keywordSearch" placeholder="Specific Item" />
-        </form>
       </div>
 
-      <div id="Results">
-        <p></p>
+      <button type="button" class="collapsible">SHOW DEPARTMENTS</button>
+      <div class="content">
+        <div id="StoreDepartments">
+          <ul id="storeDepartmentsListing"></ul>
+
+          <!-- <button type="button" class="collapsible">LADIES</button> -->
+          <div class="LadiesDepList">
+            <ul id="ladiesHead">
+              <label for="ladiesHead" id="ladieslabel" class="Department"
+                >LADIES</label
+              >
+              <ul id="ladiesActive" class="subDepartments">
+                <label for="ladiesActive" class="subDepartLabel"
+                  >LADIES ACTIVE</label
+                >
+                <li>002-LADIES ACTIVE</li>
+                <li>112-MS TEAM APPAREL</li>
+                <li>124-OUTDR OUTERWEAR</li>
+                <li>125-MS GOLF-TENNIS</li>
+                <li>133-PLUS ACTIVE</li>
+                <li>138-OUTDOOR TOPS</li>
+                <li>139-MS PERF TOPS</li>
+                <li>140-MS PERF BOTTOMS</li>
+                <li>141-MS ATHL TOPS</li>
+                <li>142-MS ATHL BOTTOMS</li>
+                <li>143-OUTDR BOTTOMS</li>
+              </ul>
+              <ul id="msPlus" class="subDepartments">
+                <label for="msPlus" class="subDepartLabel">MS PLUS</label>
+                <li>003-MS PLUS</li>
+                <li>152-EC MP SHORTS</li>
+                <li>154-EC MP DENIM</li>
+                <li>155-EC MP CAPRIS</li>
+                <li>156-EC MP WOVENS</li>
+                <li>157-EC MP SL-SS C K</li>
+                <li>158-EC MP 3Q LS C K</li>
+                <li>160-EC MP CAS BOTTM</li>
+                <li>162-EC MP WTW KNITS</li>
+                <li>164-EC MP WTW SEPS</li>
+                <li>166-WC MP SL-SS C K</li>
+                <li>169-EC MP SWTR-JKTS</li>
+                <li>170-WC MP CAS BOTT</li>
+                <li>171-WC MP 3Q LS CK</li>
+                <li>172-WC MP WTW KNIT</li>
+                <li>173-WC MP WOVENS</li>
+                <li>174-WC MP DENIM</li>
+              </ul>
+              <ul id="juniors" class="subDepartments">
+                <label for="juniors" class="subDepartLabel">JUNIORS</label>
+                <li>007-JUNIORS</li>
+                <li>206-EC JR DRESSES</li>
+                <li>226-EC JKTS-OWTRWR</li>
+                <li>228-EC JR WOVEN TOP</li>
+                <li>229-JR SWEATERS</li>
+                <li>230-EC JR FASH KNIT</li>
+                <li>231-WC JR SCREENS</li>
+                <li>232-EC JR SCREENS</li>
+                <li>233-EC JR ACTIVE BO</li>
+                <li>234-EC JR SHORTS</li>
+                <li>235-EC JR BOTTOMS</li>
+                <li>236-EC JR DENIM</li>
+                <li>239-EC JR BAS KNITS</li>
+                <li>240-WC JR BAS KNITS</li>
+                <li>241-WC JKTS-OWTRWR</li>
+                <li>242-WC JR DRESSES</li>
+                <li>243-WC JR WOVEN TOP</li>
+                <li>244-WC JR FASH KNIT</li>
+                <li>245-WC JR ACTIVE BO</li>
+                <li>246-WC JR SHORTS</li>
+                <li>247-WC JR BOTTOMS</li>
+                <li>248-WC JR DENIM</li>
+                <li>250-EC ACTIVE TOPS</li>
+                <li>251-WC ACTIVE TOPS</li>
+              </ul>
+              <ul id="dresses" class="subDepartments">
+                <label for="dresses" class="subDepartLabel">DRESSES</label>
+                <li>009-DRESSES</li>
+                <li>201-SHRUGS</li>
+                <li>202-OCCASION</li>
+                <li>203-M WTW KNT DRESS</li>
+                <li>205-M CAS KNT DRESS</li>
+                <li>207-M WOVEN DRESS</li>
+                <li>223-W WTW DRESS</li>
+                <li>224-W CAS DRESS</li>
+              </ul>
+              <ul id="petites" class="subDepartments">
+                <label for="petites" class="subDepartLabel">PETITES</label>
+                <li>010-PETITES</li>
+                <li>178-PET SWEATERS</li>
+                <li>179-PET JACKETS</li>
+                <li>183-EC PET CAS KNTS</li>
+                <li>184-WC PET CAS TOPS</li>
+                <li>186-PET SEA BOTTOM</li>
+                <li>187-EC PET WTW KNTS</li>
+                <li>188-WC PET WTW TOPS</li>
+                <li>189-PET WTW SEPS</li>
+                <li>191-PET DENIM</li>
+                <li>193-EC PET WVN TOPS</li>
+              </ul>
+
+              <ul id="misses" class="subDepartments">
+                <label for="misses" class="subDepartLabel">MISSES</label>
+                <li>014-MISSES</li>
+                <li>099-EC BTR WTW KNIT</li>
+                <li>100-MS WTW SEPS</li>
+                <li>101-EC MS BLOUSE</li>
+                <li>102-WC MS BLOUSE</li>
+                <li>104-MS SHORTS</li>
+                <li>105-EC 3Q CAS KNIT</li>
+                <li>106-EC SS CAS KNIT</li>
+                <li>107-MS SWEATERS</li>
+                <li>108-SKIRTS</li>
+                <li>109-MS DENIM</li>
+                <li>110-MS CAS BOTTOMS</li>
+                <li>111-MS CAPRIS</li>
+                <li>114-EC SL CAS KNIT</li>
+                <li>115-WC MS SHIRT</li>
+                <li>116-EC MS SHIRT</li>
+                <li>126-EC RESORT KNIT</li>
+                <li>127-WC BETTER TOPS</li>
+                <li>128-MS JACKETS</li>
+                <li>129-EC MS BTR WOVEN</li>
+                <li>130-EC BTR CAS KNIT</li>
+                <li>131-MS BETTER SWEAT</li>
+                <li>132-EC MS WTW KNITS</li>
+                <li>134-MS BETTER DENIM</li>
+                <li>135-WC 3Q CAS KNIT</li>
+                <li>136-MS BTTR BOTTOMS</li>
+                <li>137-WC MS WTW KNITS</li>
+                <li>182-EC MS LS 3RD PC</li>
+                <li>215-WC SL CAS KNIT</li>
+                <li>216-WC SS CAS KNIT</li>
+                <li>217-WC MS LS+3RD PC</li>
+                <li>218-WC RESORT KNITS</li>
+                <li>219-BTTR SEAS BTM</li>
+                <li>225-MS OUTERWEAR</li>
+              </ul>
+
+              <ul id="lSwim" class="subDepartments">
+                <label for="lSwim" class="subDepartLabel">LADIES SWIM</label>
+                <li>016-SWIM</li>
+                <li>118-COVER-UPS M-W</li>
+                <li>119-UPDATED SWIM</li>
+                <li>120-CLASSIC SWIM</li>
+                <li>121-JUNIOR SWIM</li>
+                <li>123-WOMENS SWIM</li>
+              </ul>
+
+              <ul id="jrPlus" class="subDepartments">
+                <label for="jrPlus" class="subDepartLabel">JR PLUS</label>
+                <li>022-JR PLUS</li>
+                <li>145-EC JP BSC KNITS</li>
+                <li>146-WC JP BSC KNITS</li>
+                <li>147-EC JP BOTTOMS</li>
+                <li>148-WC JP BOTTOMS</li>
+                <li>149-EC JP SCREENS</li>
+                <li>151-WC JP SCREENS</li>
+                <li>153-EC JP DRESSES</li>
+                <li>159-WC JP DRESSES</li>
+                <li>161-EC JP DENIM</li>
+                <li>163-EC JP SHORTS</li>
+                <li>165-WC JP SHORTS</li>
+                <li>168-WC JP DENIM</li>
+                <li>237-EC JP FASH TOPS</li>
+                <li>238-WC JP FASH TOPS</li>
+                <li>260-EC JP ACTIVE</li>
+                <li>261-WC JP ACTIVE</li>
+                <li>262-EC JP JKT SWTR</li>
+                <li>263-WC JP JKT SWTR</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="MensDepList">
+            <ul id="menHead">
+              <label for="menHead" id="mensLabel" class="Department"
+                >Mens</label
+              >
+              <ul id="mensFurn" class="subDepartments">
+                <label for="mensFurn" class="subDepartLabel"
+                  >MENS FURN/ACC</label
+                >
+                <li>004-MENS FURN/ACC</li>
+                <li>484 MENS Q LINE</li>
+                <li>487-LOUNGEWEAR</li>
+                <li>489-UNDERWEAR</li>
+                <li>490-MENS SOCKS</li>
+                <li>491-DRESSWEAR</li>
+                <li>492-WATCHES-JEWELRY</li>
+                <li>494-MENS SM LEATHER</li>
+                <li>495-HEADWEAR</li>
+                <li>496-MENS BELTS</li>
+                <li>499-BACKPACKS-BAGS</li>
+              </ul>
+
+              <ul id="mensApparel" class="subDepartments">
+                <label for="mensApparel" class="subDepartLabel"
+                  >MENS APPAREL</label
+                >
+                <li>012-MENS APPAREL</li>
+                <li>453-MENS LS WOVENS</li>
+                <li>454-MNS SS WVN TOP</li>
+                <li>455-MENS SS KNITS</li>
+                <li>458-MENS POLOS</li>
+                <li>459-MENS LS KNITS</li>
+                <li>462-MENS PANTS</li>
+                <li>464-MENS SHORTS</li>
+                <li>468-MENS DENIM JEAN</li>
+                <li>480-BIG MENS TOPS</li>
+                <li>481-BIG MENS BOTTMS</li>
+                <li>482-MENS SWIMWEAR</li>
+                <li>483-MENS LAYERING</li>
+                <li>485-MENS JACKETS</li>
+              </ul>
+
+              <ul id="youngMen" class="subDepartments">
+                <label for="youngMen" class="subDepartLabel">YOUNGMEN</label>
+                <li>013-YOUNGMENS</li>
+                <li>500-EC YM KNIT TOPS</li>
+                <li>501-EC YM WOVEN TOP</li>
+                <li>505-YM BIG TALL</li>
+                <li>508-EC YM JACKETS</li>
+                <li>509-WC YM SWIMWEAR</li>
+                <li>510-EC YM DENIM</li>
+                <li>511-EC YM CAS PANTS</li>
+                <li>512-EC YM TEES</li>
+                <li>513-EC YM FLC HOODI</li>
+                <li>514-WC YM FLC HOODI</li>
+                <li>515-EC LS TEES</li>
+                <li>516-WC LS TEES</li>
+                <li>520-EC YM SHORTS</li>
+                <li>521-WC YM KNIT TOPS</li>
+                <li>522-WC YM JACKETS</li>
+                <li>523-WC YM DENIM</li>
+                <li>524-WC YM CAS PANTS</li>
+                <li>526-WC YM TEES</li>
+                <li>527-WC YM SHORTS</li>
+                <li>528-WCYM WOVEN TOPS</li>
+              </ul>
+
+              <ul id="mensActive" class="subDepartments">
+                <label for="mensActive" class="subDepartLabel"
+                  >MENS ACTIVE</label
+                >
+                <li>021-MENS ACTIVE</li>
+                <li>754-LADIES TEAM</li>
+                <li>756-MENS ACT LNGBTM</li>
+                <li>757-MENS ACTIVE TOP</li>
+                <li>758-MENS ACT SHORTS</li>
+                <li>759-BIG MENS ACT TO</li>
+                <li>760-TEAM GIFTS</li>
+                <li>761-MN TEAM APPAREL</li>
+                <li>762-MENS GOLF TOPS</li>
+                <li>763-GOLF BOTTOMS</li>
+                <li>769-BIG MENS ACT BT</li>
+                <li>024-MENS OUTDOOR</li>
+                <li>752-MENS FISHING</li>
+                <li>753-MENS OUTD BOTTM</li>
+                <li>755-BIG MENS OUTDOR</li>
+                <li>765-MENS HUNTING</li>
+                <li>767-TRAIL</li>
+                <li>768-OUTD OUTERWEAR</li>
+                <li>772-OUTDOOR HOODIES</li>
+                <li>774-WORKWEAR</li>
+              </ul>
+            </ul>
+          </div>
+
+          <div class="AIBDepList">
+            <ul id="AIBHead">
+              <label for="AIBHead" id="AIBLabel" class="Department"
+                >Accessories/Beauty</label
+              >
+
+              <ul id="accessories" class="subDepartments">
+                <label for="accessories" class="subDepartLabel"
+                  >ACCESSORIES</label
+                >
+                <li>000 - Accessories</li>
+                <li>000-ACCESSORIES</li>
+                <li>002-JUNIOR JEWELRY</li>
+                <li>003-EARRINGS</li>
+                <li>004-LADIES Q LINE</li>
+                <li>005-JEWELRY</li>
+                <li>006-BOXED JEWELRY</li>
+                <li>007-HAIR ACCESS</li>
+                <li>008-SCARVES-WRAPS</li>
+                <li>009-FASHION ACCESS</li>
+                <li>010-COLD WEATHER AC</li>
+                <li>022-READER</li>
+                <li>025-LADIES EYEWEAR</li>
+                <li>026-HATS</li>
+                <li>027-MENS EYEWEAR</li>
+              </ul>
+
+              <ul id="lingerie" class="subDepartments">
+                <label for="lingerie" class="subDepartLabel">LINGERIE</label>
+                <li>001-LINGERIE</li>
+                <li>055-SHAPEWEAR</li>
+                <li>052-BRAS</li>
+                <li>060-PANTIES</li>
+                <li>061-FULL FIGURE BRA</li>
+                <li>062-JR PANTIES</li>
+                <li>063-PLUS PANTIES</li>
+                <li>064-JR BRAS</li>
+                <li>073-MS SLEEPWEAR</li>
+                <li>076-PLUS SLEEPWEAR</li>
+                <li>080-SLIPPERS</li>
+                <li>081-ROBES</li>
+                <li>082-ATHLETIC SOCKS</li>
+                <li>083-FASHION SOCKS</li>
+                <li>090-CLD WTH-SEAS SK</li>
+                <li>097-MENS UNIFORMS</li>
+                <li>117-UNIFORMS</li>
+              </ul>
+
+              <ul id="beauty" class="subDepartments">
+                <label for="beauty" class="subDepartLabel">BEAUTY</label>
+                <li>018-BEAUTY</li>
+                <li>023-LADIES FRAGRNCE</li>
+                <li>024-MENS FRAGRANCES</li>
+                <li>028-EC BATH + BODY</li>
+                <li>029-EC SKIN CARE</li>
+                <li>030-EC HAIR CARE</li>
+                <li>031-EC COSMETICS</li>
+                <li>032-EC BEAUTY ACC</li>
+                <li>033-LADIES ELECTRIC</li>
+                <li>034-EC MEN GROOMING</li>
+                <li>035-MENS PCARE ELEC</li>
+                <li>036-EC BEAUTY TOOLS</li>
+                <li>038-WC BATH + BODY</li>
+                <li>039-WC SKIN CARE</li>
+                <li>040-WC HAIR CARE</li>
+                <li>041-WC COSMETICS</li>
+                <li>042-WC BEAUTY ACC</li>
+                <li>043-WC MEN GROOMING</li>
+                <li>044-EC MOISTURIZERS</li>
+                <li>045-WC BEAUTY TOOLS</li>
+                <li>046-WC MOISTURIZERS</li>
+                <li>047-WC SPA-WELLNESS</li>
+                <li>057-EC SPA-WELLNESS</li>
+                <li>058-LDY ELECTRIC SE</li>
+                <li>059-BEAUTY Q LINE</li>
+              </ul>
+
+              <ul id="handbags" class="subDepartments">
+                <label for="handbags" class="subDepartLabel">HANDBAGS</label>
+                <li>026-HANDBAGS</li>
+                <li>270-JUNIOR HANDBAGS</li>
+                <li>272-MODERATE HNDBGS</li>
+                <li>273-BETTER HANDBAGS</li>
+                <li>274-ACTIVE HANDBAGS</li>
+                <li>275-SEASONAL HNDBGS</li>
+                <li>277-SMALL LEATHER</li>
+              </ul>
+            </ul>
+          </div>
+
+          <div class="ShoesDepList">
+            <ul id="ShoesHead">
+              <label for="ShoesHead" id="ShoesLabel" class="Department"
+                >SHOES</label
+              >
+              <ul id="childrensfootw" class="subDepartments">
+                <label for="childrensfootw" class="subDepartLabel"
+                  >CHILDRENS FOOTW</label
+                >
+                <li>898 - CHILDRENS FOOTW</li>
+                <li>660-TOD GIRL CLOSED</li>
+                <li>661-TG SANDALS</li>
+                <li>662-TG ATHLETICS</li>
+                <li>663-TG BOOTS</li>
+                <li>670-EC GIRL CLOSED</li>
+                <li>671-WC GIRL CLOSED</li>
+                <li>672-EC GIRL SANDALS</li>
+                <li>673-WC GIRL SANDALS</li>
+                <li>674-YG ATHLETICS</li>
+                <li>675-EC GIRL BOOTS</li>
+                <li>676-WC GIRL BOOTS</li>
+                <li>681-TDL BOY CLOSED</li>
+                <li>682-TDL BOY SANDALS</li>
+                <li>683-TDL BOY ATHLETI</li>
+                <li>684-TDL BOY BOOTS</li>
+                <li>690-YB CLOSED</li>
+                <li>691-YB SANDALS</li>
+                <li>692-YB ATHLETICS</li>
+                <li>693-YB BOOTS</li>
+              </ul>
+
+              <ul id="mensFootwear" class="subDepartments">
+                <label for="mensFootwear" class="subDepartLabel"
+                  >MENS FOOTWEAR</label
+                >
+                <li>899-MENS FOOTWEAR</li>
+                <li>591-MENS SHOES</li>
+                <li>592-MENS SANDALS</li>
+                <li>593-MENS CASUAL</li>
+                <li>594-MENS ATHLETICS</li>
+                <li>595-MENS BOOTS</li>
+              </ul>
+
+              <ul id="ladiesFootwear" class="subDepartments">
+                <label for="ladiesFootwear" class="subDepartLabel"
+                  >LADIES FOOTWEAR</label
+                >
+                <li>900-LADIES FOOTWEAR</li>
+                <li>538-MISSES BOOTS</li>
+                <li>540 EC JUNIOR BOOTS</li>
+                <li>541-EC JR SANDALS</li>
+                <li>542-EC JR CLSD SHOE</li>
+                <li>543-LADIES ATHLETIC</li>
+                <li>552-EC MS CLSD SHOE</li>
+                <li>553-EC MISSES SNDLS</li>
+                <li>557-WC JUNIOR BOOTS</li>
+                <li>558-WC JR SANDALS</li>
+                <li>559-WC JR CLSD SHOE</li>
+                <li>571-COMFORT SANDALS</li>
+                <li>573-LDS ATHLEISURE</li>
+                <li>574-LDS ATH SANDALS</li>
+                <li>576-MS ATHLEISURE</li>
+                <li>577-WC MS CLSD SHOE</li>
+                <li>578-WC MISSES SNDLS</li>
+                <li>585-EC JRATHLEISURE</li>
+                <li>586-WC JRATHLEISURE</li>
+                <li>587-ECL FLIPFLOPS</li>
+                <li>588-WCL FLIPFLOPS</li>
+              </ul>
+            </ul>
+          </div>
+
+          <div class="YouthDepList">
+            <ul id="YouthHead">
+              <label for="YouthHead" id="YouthLabel" class="Department"
+                >YOUTH</label
+              >
+              <ul id="boysYouth" class="subDepartments">
+                <label for="boysYouth" class="subDepartLabel">BOYS</label>
+                <li>005 - BOYS</li>
+                <li>325-BOY 4-7 BOTTOMS</li>
+                <li>326-BOY 4-7 TOPS</li>
+                <li>327-BOYS UNDERWEAR</li>
+                <li>330-BOY 8-20 TEES</li>
+                <li>331-BOY 8-20 PANTS</li>
+                <li>333-BOY 8-20 DENIM</li>
+                <li>334-KIDS TEAM APP</li>
+                <li>335-BOY ACTIVE 4-7</li>
+                <li>336-BOY ACT 8-20 TO</li>
+                <li>337-BOY 4-20 OTRWR</li>
+                <li>338-BOY 4-20 SWIM</li>
+                <li>339-BOY 8-20 SHORTS</li>
+                <li>340-BOYS SOCKS</li>
+                <li>342-BOY 4-7 SETS</li>
+                <li>343-BOY 8-20 TOPS</li>
+                <li>344-BOY ACT 8-20 BT</li>
+                <li>397-BOYS SLEEPWEAR</li>
+                <li>399-BOY ACCESS</li>
+              </ul>
+
+              <ul id="babyYouth" class="subDepartments">
+                <label for="babyYouth" class="subDepartLabel">BABY</label>
+                <li>019-BABY</li>
+                <li>370-GEAR AND TRAVEL</li>
+                <li>374-TG DRESSES</li>
+                <li>376-FEEDING</li>
+                <li>377-BABY CARE</li>
+                <li>378-TB ACTIVE</li>
+                <li>379-TG SEPARATES</li>
+                <li>380-TB SEASONAL</li>
+                <li>381-TB SEPARATES</li>
+                <li>390-TG ACTIVE</li>
+                <li>391-TG SEASONAL</li>
+                <li>602-NEWBORN BOYS</li>
+                <li>603-NEWBORN GIRLS</li>
+                <li>605-INFANT BOYS</li>
+                <li>606-INFANT GIRLS</li>
+                <li>607-INFANT SHOES</li>
+                <li>608-TB SETS</li>
+                <li>609-TG SETS</li>
+                <li>610-BABY TOYS+GIFTS</li>
+                <li>612-LAYETTE SOFTLIN</li>
+                <li>614-LAYETTE ACCESS</li>
+              </ul>
+
+              <ul id="girlsYouth" class="subDepartments">
+                <label for="girlsYouth" class="subDepartLabel">GIRLS</label>
+                <li>030-GIRLS</li>
+                <li>300-GIRL 4-6X TOPS</li>
+                <li>301-GIRL 4-6X BTTMS</li>
+                <li>302-GIRL 4-6X SETS</li>
+                <li>303-GIRL 4-6X ACTIV</li>
+                <li>304-GIRL 4-6X DRESS</li>
+                <li>305-GIRL SOCKS</li>
+                <li>306-GIRL BRA PANTIE</li>
+                <li>307-GIRL SLEEPWEAR</li>
+                <li>308-KIDS LIC ACCESS</li>
+                <li>309-GIRLS ACCESS</li>
+                <li>311-BACKPACKS</li>
+                <li>312-GIRL 4-16 SWIM</li>
+                <li>313-GIRL 4-16 OUTWR</li>
+                <li>316-GIRL 7-16 TOPS</li>
+                <li>317-GIRL 7-16 SHORT</li>
+                <li>318-GIRL 7-16 BOTTO</li>
+                <li>319-GIRL 7-16 DENIM</li>
+                <li>320-GIRL 7-16 SETS</li>
+                <li>321-GIRL 7-16 ACTIV</li>
+                <li>322-GIRL 7-16 DRESS</li>
+                <li>324-CHILDRENS Q LIN</li>
+              </ul>
+            </ul>
+          </div>
+
+          <div class="HomeDepList">
+            <ul id="HomeHead">
+              <label for="HomeHead" id="HomeLabel" class="Department"
+                >HOME</label
+              >
+              <ul id="domestics" class="subDepartments">
+                <label for="domestics" class="subDepartLabel">DOMESTICS</label>
+                <li>006 - Domestics</li>
+                <li>412-MATTRESS PADS</li>
+                <li>414-BED PILLOWS</li>
+                <li>415-TABLE+ KITCHEN</li>
+                <li>416-SHEET SETS</li>
+                <li>417-DECOR PILLOWS</li>
+                <li>418-TOP OF BED</li>
+                <li>419-THROW-BLANKET</li>
+                <li>420-TOWELS</li>
+                <li>430-BEACH</li>
+                <li>437-RUGS</li>
+                <li>439-BATH RUGS</li>
+                <li>440-BATH ACCESS</li>
+                <li>441-WINDOW</li>
+                <li>444-PATIO CUSHIONS</li>
+                <li>447-ROOM SIZE RUGS</li>
+              </ul>
+
+              <ul id="homeDecor" class="subDepartments">
+                <label for="homeDecor" class="subDepartLabel">HOME DECOR</label>
+                <li>011-HOME DECOR</li>
+                <li>421-EC GLASS</li>
+                <li>429-EC ACC FRNITURE</li>
+                <li>431-EC HOME ACCENTS</li>
+                <li>433-EC REGIONAL DEC</li>
+                <li>436-EC LIGHTING</li>
+                <li>442-EC DECOR GIFTS</li>
+                <li>443-EC WALL DECOR</li>
+                <li>445-FRAMES</li>
+                <li>448-EC FURNITURE</li>
+                <li>449-EC FRAMED ART</li>
+                <li>626-WC GLASS</li>
+                <li>627-WC HOME ACCENTS</li>
+                <li>628-WC REGIONAL DEC</li>
+                <li>629-WC DECOR GIFTS</li>
+                <li>636-HC ACCENT FURN</li>
+                <li>637-HC OUTDR FURN</li>
+                <li>638-HC LIGHTING</li>
+                <li>643-OUTDOOR FURNITU</li>
+                <li>645-WC WALL DECOR</li>
+                <li>646-WC ACCNT FURNTR</li>
+                <li>647-WC FURNITURE</li>
+                <li>648-WC FRAMED ART</li>
+              </ul>
+
+              <ul id="housewares" class="subDepartments">
+                <label for="housewares" class="subDepartLabel"
+                  >HOUSEWARES</label
+                >
+                <li>015-HOUSEWARES</li>
+                <li>400-GADGETS</li>
+                <li>401-COOKWARE</li>
+                <li>408-BAKEWARE</li>
+                <li>410-SMALL APPLIANCE</li>
+                <li>423-KITCHEN DECOR</li>
+                <li>424-DRNKWARE-FLTWAR</li>
+                <li>425-ACRYLIC TABLETP</li>
+                <li>560-TOTES-HYDRATION</li>
+                <li>580-FOOD PREP</li>
+                <li>582-FOOD STORAGE</li>
+              </ul>
+
+              <ul id="consumables" class="subDepartments">
+                <label for="consumables" class="subDepartLabel"
+                  >CONSUMABLES</label
+                >
+                <li>017-CONSUMABLES</li>
+                <li>299-GOURMET MARKET</li>
+                <li>345-SWEETS</li>
+                <li>346-SEAS SWEET+SNKS</li>
+                <li>347-CONSUMABLES Q L</li>
+                <li>402-GOURMET FOOD</li>
+                <li>404-SNACKS</li>
+                <li>562-GOURMET CHOCLTE</li>
+              </ul>
+
+              <ul id="seasonalGifts" class="subDepartments">
+                <label for="seasonalGifts" class="subDepartLabel"
+                  >SEASONAL GIFTS</label
+                >
+                <li>023-SEASONAL& GIFTS</li>
+                <li>770-GIFT WRAP</li>
+                <li>771-STATIONERY</li>
+                <li>773-CRAFT</li>
+                <li>775-BOOKS</li>
+                <li>776-GARDEN DECOR</li>
+                <li>777-GARDEN ACCENTS</li>
+                <li>778-XMAS FLORAL</li>
+                <li>779-FLORAL</li>
+                <li>780-TRIM THE HOME</li>
+                <li>781-SEAS HOME DECOR</li>
+                <li>782-OFFICE</li>
+                <li>783-XMAS STATIONERY</li>
+                <li>784-EC CANDLES</li>
+                <li>785-WC CANDLES</li>
+                <li>786-HOME QUINE</li>
+              </ul>
+
+              <ul id="homeMain" class="subDepartments">
+                <label for="homeMain" class="subDepartLabel"
+                  >HOME MAINTENANCE</label
+                >
+                <li>040-HOME MAINTENANCE</li>
+                <li>940-BASKETS</li>
+                <li>942-CLOSET STORAGE</li>
+                <li>943-ACCESS STORAGE</li>
+                <li>944-LAUNDRY</li>
+                <li>945-KITCHEN ORG</li>
+                <li>946-GARAGE AUTO</li>
+                <li>947-KTCHN MNT CLEAN</li>
+              </ul>
+            </ul>
+          </div>
+
+          <div class="HTDepList">
+            <ul id="HTHead">
+              <label for="HTHead" id="HTLabel" class="Department"
+                >HARDLINES/TOYS</label
+              >
+              <ul id="hardlines" class="subDepartments">
+                <label for="hardlines" class="subDepartLabel">HARDLINES</label>
+                <li>020 - HARDLINES</li>
+                <li>020-HARDLINES</li>
+                <li>650-ELECTRONICS</li>
+                <li>652-MENS GIFTS</li>
+                <li>656-TRAVEL</li>
+                <li>657-LUGGAGE</li>
+                <li>790-DOG TOYS</li>
+                <li>791-DOG TREATS+FOOD</li>
+                <li>792-WASTE AND GROOM</li>
+                <li>793-PET BOWL STORAG</li>
+                <li>794-COLLARS + LEASH</li>
+                <li>795-PET ACCESSORIES</li>
+                <li>796-CAT</li>
+                <li>797-DOG BEDS</li>
+                <li>798-PET SOLUTIONS</li>
+                <li>799-SEASONAL PET</li>
+              </ul>
+
+              <ul id="toysSport" class="subDepartments">
+                <label for="toySport" class="subDepartLabel"
+                  >TOYS AND SPORT</label
+                >
+                <li>025-TOYS AND SPORT</li>
+                <li>382-PRESCHOOL TOYS</li>
+                <li>383-BOYS TOYS</li>
+                <li>384-GIRLS TOYS</li>
+                <li>385-SEASONAL TOYS</li>
+                <li>386-CHILDREN BOOKS</li>
+                <li>387-SPORTING GOODS</li>
+                <li>388-FITNESS</li>
+                <li>389-GAMES</li>
+                <li>621-GAMES AND PLUSH</li>
+              </ul>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div id="StoreDepartments">
-        <ul id="storeDepartmentsListing"></ul>
-
-        <button type="button" class="collapsible">LADIES</button>
-        <div class="LadiesDepList">
-          <ul id="ladiesHead">
-            <label for="ladiesHead" id="ladieslabel" class="Department"
-              >LADIES</label
-            >
-            <ul id="ladiesActive" class="subDepartments">
-              <label for="ladiesActive" class="subDepartLabel"
-                >LADIES ACTIVE</label
-              >
-              <li>002-LADIES ACTIVE</li>
-              <li>112-MS TEAM APPAREL</li>
-              <li>124-OUTDR OUTERWEAR</li>
-              <li>125-MS GOLF-TENNIS</li>
-              <li>133-PLUS ACTIVE</li>
-              <li>138-OUTDOOR TOPS</li>
-              <li>139-MS PERF TOPS</li>
-              <li>140-MS PERF BOTTOMS</li>
-              <li>141-MS ATHL TOPS</li>
-              <li>142-MS ATHL BOTTOMS</li>
-              <li>143-OUTDR BOTTOMS</li>
-            </ul>
-            <ul id="msPlus" class="subDepartments">
-              <label for="msPlus" class="subDepartLabel">MS PLUS</label>
-              <li>003-MS PLUS</li>
-              <li>152-EC MP SHORTS</li>
-              <li>154-EC MP DENIM</li>
-              <li>155-EC MP CAPRIS</li>
-              <li>156-EC MP WOVENS</li>
-              <li>157-EC MP SL-SS C K</li>
-              <li>158-EC MP 3Q LS C K</li>
-              <li>160-EC MP CAS BOTTM</li>
-              <li>162-EC MP WTW KNITS</li>
-              <li>164-EC MP WTW SEPS</li>
-              <li>166-WC MP SL-SS C K</li>
-              <li>169-EC MP SWTR-JKTS</li>
-              <li>170-WC MP CAS BOTT</li>
-              <li>171-WC MP 3Q LS CK</li>
-              <li>172-WC MP WTW KNIT</li>
-              <li>173-WC MP WOVENS</li>
-              <li>174-WC MP DENIM</li>
-            </ul>
-            <ul id="juniors" class="subDepartments">
-              <label for="juniors" class="subDepartLabel">JUNIORS</label>
-              <li>007-JUNIORS</li>
-              <li>206-EC JR DRESSES</li>
-              <li>226-EC JKTS-OWTRWR</li>
-              <li>228-EC JR WOVEN TOP</li>
-              <li>229-JR SWEATERS</li>
-              <li>230-EC JR FASH KNIT</li>
-              <li>231-WC JR SCREENS</li>
-              <li>232-EC JR SCREENS</li>
-              <li>233-EC JR ACTIVE BO</li>
-              <li>234-EC JR SHORTS</li>
-              <li>235-EC JR BOTTOMS</li>
-              <li>236-EC JR DENIM</li>
-              <li>239-EC JR BAS KNITS</li>
-              <li>240-WC JR BAS KNITS</li>
-              <li>241-WC JKTS-OWTRWR</li>
-              <li>242-WC JR DRESSES</li>
-              <li>243-WC JR WOVEN TOP</li>
-              <li>244-WC JR FASH KNIT</li>
-              <li>245-WC JR ACTIVE BO</li>
-              <li>246-WC JR SHORTS</li>
-              <li>247-WC JR BOTTOMS</li>
-              <li>248-WC JR DENIM</li>
-              <li>250-EC ACTIVE TOPS</li>
-              <li>251-WC ACTIVE TOPS</li>
-            </ul>
-            <ul id="dresses" class="subDepartments">
-              <label for="dresses" class="subDepartLabel">DRESSES</label>
-              <li>009-DRESSES</li>
-              <li>201-SHRUGS</li>
-              <li>202-OCCASION</li>
-              <li>203-M WTW KNT DRESS</li>
-              <li>205-M CAS KNT DRESS</li>
-              <li>207-M WOVEN DRESS</li>
-              <li>223-W WTW DRESS</li>
-              <li>224-W CAS DRESS</li>
-            </ul>
-            <ul id="petites" class="subDepartments">
-              <label for="petites" class="subDepartLabel">PETITES</label>
-              <li>010-PETITES</li>
-              <li>178-PET SWEATERS</li>
-              <li>179-PET JACKETS</li>
-              <li>183-EC PET CAS KNTS</li>
-              <li>184-WC PET CAS TOPS</li>
-              <li>186-PET SEA BOTTOM</li>
-              <li>187-EC PET WTW KNTS</li>
-              <li>188-WC PET WTW TOPS</li>
-              <li>189-PET WTW SEPS</li>
-              <li>191-PET DENIM</li>
-              <li>193-EC PET WVN TOPS</li>
-            </ul>
-
-            <ul id="misses" class="subDepartments">
-              <label for="misses" class="subDepartLabel">MISSES</label>
-              <li>014-MISSES</li>
-              <li>099-EC BTR WTW KNIT</li>
-              <li>100-MS WTW SEPS</li>
-              <li>101-EC MS BLOUSE</li>
-              <li>102-WC MS BLOUSE</li>
-              <li>104-MS SHORTS</li>
-              <li>105-EC 3Q CAS KNIT</li>
-              <li>106-EC SS CAS KNIT</li>
-              <li>107-MS SWEATERS</li>
-              <li>108-SKIRTS</li>
-              <li>109-MS DENIM</li>
-              <li>110-MS CAS BOTTOMS</li>
-              <li>111-MS CAPRIS</li>
-              <li>114-EC SL CAS KNIT</li>
-              <li>115-WC MS SHIRT</li>
-              <li>116-EC MS SHIRT</li>
-              <li>126-EC RESORT KNIT</li>
-              <li>127-WC BETTER TOPS</li>
-              <li>128-MS JACKETS</li>
-              <li>129-EC MS BTR WOVEN</li>
-              <li>130-EC BTR CAS KNIT</li>
-              <li>131-MS BETTER SWEAT</li>
-              <li>132-EC MS WTW KNITS</li>
-              <li>134-MS BETTER DENIM</li>
-              <li>135-WC 3Q CAS KNIT</li>
-              <li>136-MS BTTR BOTTOMS</li>
-              <li>137-WC MS WTW KNITS</li>
-              <li>182-EC MS LS 3RD PC</li>
-              <li>215-WC SL CAS KNIT</li>
-              <li>216-WC SS CAS KNIT</li>
-              <li>217-WC MS LS+3RD PC</li>
-              <li>218-WC RESORT KNITS</li>
-              <li>219-BTTR SEAS BTM</li>
-              <li>225-MS OUTERWEAR</li>
-            </ul>
-
-            <ul id="lSwim" class="subDepartments">
-              <label for="lSwim" class="subDepartLabel">LADIES SWIM</label>
-              <li>016-SWIM</li>
-              <li>118-COVER-UPS M-W</li>
-              <li>119-UPDATED SWIM</li>
-              <li>120-CLASSIC SWIM</li>
-              <li>121-JUNIOR SWIM</li>
-              <li>123-WOMENS SWIM</li>
-            </ul>
-
-            <ul id="jrPlus" class="subDepartments">
-              <label for="jrPlus" class="subDepartLabel">JR PLUS</label>
-              <li>022-JR PLUS</li>
-              <li>145-EC JP BSC KNITS</li>
-              <li>146-WC JP BSC KNITS</li>
-              <li>147-EC JP BOTTOMS</li>
-              <li>148-WC JP BOTTOMS</li>
-              <li>149-EC JP SCREENS</li>
-              <li>151-WC JP SCREENS</li>
-              <li>153-EC JP DRESSES</li>
-              <li>159-WC JP DRESSES</li>
-              <li>161-EC JP DENIM</li>
-              <li>163-EC JP SHORTS</li>
-              <li>165-WC JP SHORTS</li>
-              <li>168-WC JP DENIM</li>
-              <li>237-EC JP FASH TOPS</li>
-              <li>238-WC JP FASH TOPS</li>
-              <li>260-EC JP ACTIVE</li>
-              <li>261-WC JP ACTIVE</li>
-              <li>262-EC JP JKT SWTR</li>
-              <li>263-WC JP JKT SWTR</li>
-            </ul>
-          </ul>
-        </div>
-        <div class="MensDepList">
-          <ul id="menHead">
-            <label for="menHead" id="mensLabel" class="Department">Mens</label>
-            <ul id="mensFurn" class="subDepartments">
-              <label for="mensFurn" class="subDepartLabel">MENS FURN/ACC</label>
-              <li>004-MENS FURN/ACC</li>
-              <li>484 MENS Q LINE</li>
-              <li>487-LOUNGEWEAR</li>
-              <li>489-UNDERWEAR</li>
-              <li>490-MENS SOCKS</li>
-              <li>491-DRESSWEAR</li>
-              <li>492-WATCHES-JEWELRY</li>
-              <li>494-MENS SM LEATHER</li>
-              <li>495-HEADWEAR</li>
-              <li>496-MENS BELTS</li>
-              <li>499-BACKPACKS-BAGS</li>
-            </ul>
-
-            <ul id="mensApparel" class="subDepartments">
-              <label for="mensApparel" class="subDepartLabel"
-                >MENS APPAREL</label
-              >
-              <li>012-MENS APPAREL</li>
-              <li>453-MENS LS WOVENS</li>
-              <li>454-MNS SS WVN TOP</li>
-              <li>455-MENS SS KNITS</li>
-              <li>458-MENS POLOS</li>
-              <li>459-MENS LS KNITS</li>
-              <li>462-MENS PANTS</li>
-              <li>464-MENS SHORTS</li>
-              <li>468-MENS DENIM JEAN</li>
-              <li>480-BIG MENS TOPS</li>
-              <li>481-BIG MENS BOTTMS</li>
-              <li>482-MENS SWIMWEAR</li>
-              <li>483-MENS LAYERING</li>
-              <li>485-MENS JACKETS</li>
-            </ul>
-
-            <ul id="youngMen" class="subDepartments">
-              <label for="youngMen" class="subDepartLabel">YOUNGMEN</label>
-              <li>013-YOUNGMENS</li>
-              <li>500-EC YM KNIT TOPS</li>
-              <li>501-EC YM WOVEN TOP</li>
-              <li>505-YM BIG TALL</li>
-              <li>508-EC YM JACKETS</li>
-              <li>509-WC YM SWIMWEAR</li>
-              <li>510-EC YM DENIM</li>
-              <li>511-EC YM CAS PANTS</li>
-              <li>512-EC YM TEES</li>
-              <li>513-EC YM FLC HOODI</li>
-              <li>514-WC YM FLC HOODI</li>
-              <li>515-EC LS TEES</li>
-              <li>516-WC LS TEES</li>
-              <li>520-EC YM SHORTS</li>
-              <li>521-WC YM KNIT TOPS</li>
-              <li>522-WC YM JACKETS</li>
-              <li>523-WC YM DENIM</li>
-              <li>524-WC YM CAS PANTS</li>
-              <li>526-WC YM TEES</li>
-              <li>527-WC YM SHORTS</li>
-              <li>528-WCYM WOVEN TOPS</li>
-            </ul>
-
-            <ul id="mensActive" class="subDepartments">
-              <label for="mensActive" class="subDepartLabel">MENS ACTIVE</label>
-              <li>021-MENS ACTIVE</li>
-              <li>754-LADIES TEAM</li>
-              <li>756-MENS ACT LNGBTM</li>
-              <li>757-MENS ACTIVE TOP</li>
-              <li>758-MENS ACT SHORTS</li>
-              <li>759-BIG MENS ACT TO</li>
-              <li>760-TEAM GIFTS</li>
-              <li>761-MN TEAM APPAREL</li>
-              <li>762-MENS GOLF TOPS</li>
-              <li>763-GOLF BOTTOMS</li>
-              <li>769-BIG MENS ACT BT</li>
-              <li>024-MENS OUTDOOR</li>
-              <li>752-MENS FISHING</li>
-              <li>753-MENS OUTD BOTTM</li>
-              <li>755-BIG MENS OUTDOR</li>
-              <li>765-MENS HUNTING</li>
-              <li>767-TRAIL</li>
-              <li>768-OUTD OUTERWEAR</li>
-              <li>772-OUTDOOR HOODIES</li>
-              <li>774-WORKWEAR</li>
-            </ul>
-          </ul>
-        </div>
-
-        <div class="AIBDepList">
-          <ul id="AIBHead">
-            <label for="AIBHead" id="AIBLabel" class="Department"
-              >Accessories/Intimates/Beauty</label
-            >
-
-            <ul id="accessories" class="subDepartments">
-              <label for="accessories" class="subDepartLabel"
-                >ACCESSORIES</label
-              >
-              <li>000 - Accessories</li>
-              <li>000-ACCESSORIES</li>
-              <li>002-JUNIOR JEWELRY</li>
-              <li>003-EARRINGS</li>
-              <li>004-LADIES Q LINE</li>
-              <li>005-JEWELRY</li>
-              <li>006-BOXED JEWELRY</li>
-              <li>007-HAIR ACCESS</li>
-              <li>008-SCARVES-WRAPS</li>
-              <li>009-FASHION ACCESS</li>
-              <li>010-COLD WEATHER AC</li>
-              <li>022-READER</li>
-              <li>025-LADIES EYEWEAR</li>
-              <li>026-HATS</li>
-              <li>027-MENS EYEWEAR</li>
-            </ul>
-
-            <ul id="lingerie" class="subDepartments">
-              <label for="lingerie" class="subDepartLabel">LINGERIE</label>
-              <li>001-LINGERIE</li>
-              <li>055-SHAPEWEAR</li>
-              <li>052-BRAS</li>
-              <li>060-PANTIES</li>
-              <li>061-FULL FIGURE BRA</li>
-              <li>062-JR PANTIES</li>
-              <li>063-PLUS PANTIES</li>
-              <li>064-JR BRAS</li>
-              <li>073-MS SLEEPWEAR</li>
-              <li>076-PLUS SLEEPWEAR</li>
-              <li>080-SLIPPERS</li>
-              <li>081-ROBES</li>
-              <li>082-ATHLETIC SOCKS</li>
-              <li>083-FASHION SOCKS</li>
-              <li>090-CLD WTH-SEAS SK</li>
-              <li>097-MENS UNIFORMS</li>
-              <li>117-UNIFORMS</li>
-            </ul>
-
-            <ul id="beauty" class="subDepartments">
-              <label for="beauty" class="subDepartLabel">BEAUTY</label>
-              <li>018-BEAUTY</li>
-              <li>023-LADIES FRAGRNCE</li>
-              <li>024-MENS FRAGRANCES</li>
-              <li>028-EC BATH + BODY</li>
-              <li>029-EC SKIN CARE</li>
-              <li>030-EC HAIR CARE</li>
-              <li>031-EC COSMETICS</li>
-              <li>032-EC BEAUTY ACC</li>
-              <li>033-LADIES ELECTRIC</li>
-              <li>034-EC MEN GROOMING</li>
-              <li>035-MENS PCARE ELEC</li>
-              <li>036-EC BEAUTY TOOLS</li>
-              <li>038-WC BATH + BODY</li>
-              <li>039-WC SKIN CARE</li>
-              <li>040-WC HAIR CARE</li>
-              <li>041-WC COSMETICS</li>
-              <li>042-WC BEAUTY ACC</li>
-              <li>043-WC MEN GROOMING</li>
-              <li>044-EC MOISTURIZERS</li>
-              <li>045-WC BEAUTY TOOLS</li>
-              <li>046-WC MOISTURIZERS</li>
-              <li>047-WC SPA-WELLNESS</li>
-              <li>057-EC SPA-WELLNESS</li>
-              <li>058-LDY ELECTRIC SE</li>
-              <li>059-BEAUTY Q LINE</li>
-            </ul>
-
-            <ul id="handbags" class="subDepartments">
-              <label for="handbags" class="subDepartLabel">HANDBAGS</label>
-              <li>026-HANDBAGS</li>
-              <li>270-JUNIOR HANDBAGS</li>
-              <li>272-MODERATE HNDBGS</li>
-              <li>273-BETTER HANDBAGS</li>
-              <li>274-ACTIVE HANDBAGS</li>
-              <li>275-SEASONAL HNDBGS</li>
-              <li>277-SMALL LEATHER</li>
-            </ul>
-          </ul>
-        </div>
-
-        <div class="ShoesDepList">
-          <ul id="ShoesHead">
-            <label for="ShoesHead" id="ShoesLabel" class="Department"
-              >SHOES</label
-            >
-            <ul id="childrensfootw" class="subDepartments">
-              <label for="childrensfootw" class="subDepartLabel"
-                >CHILDRENS FOOTW</label
-              >
-              <li>898 - CHILDRENS FOOTW</li>
-              <li>660-TOD GIRL CLOSED</li>
-              <li>661-TG SANDALS</li>
-              <li>662-TG ATHLETICS</li>
-              <li>663-TG BOOTS</li>
-              <li>670-EC GIRL CLOSED</li>
-              <li>671-WC GIRL CLOSED</li>
-              <li>672-EC GIRL SANDALS</li>
-              <li>673-WC GIRL SANDALS</li>
-              <li>674-YG ATHLETICS</li>
-              <li>675-EC GIRL BOOTS</li>
-              <li>676-WC GIRL BOOTS</li>
-              <li>681-TDL BOY CLOSED</li>
-              <li>682-TDL BOY SANDALS</li>
-              <li>683-TDL BOY ATHLETI</li>
-              <li>684-TDL BOY BOOTS</li>
-              <li>690-YB CLOSED</li>
-              <li>691-YB SANDALS</li>
-              <li>692-YB ATHLETICS</li>
-              <li>693-YB BOOTS</li>
-            </ul>
-
-            <ul id="mensFootwear" class="subDepartments">
-              <label for="mensFootwear" class="subDepartLabel"
-                >MENS FOOTWEAR</label
-              >
-              <li>899-MENS FOOTWEAR</li>
-              <li>591-MENS SHOES</li>
-              <li>592-MENS SANDALS</li>
-              <li>593-MENS CASUAL</li>
-              <li>594-MENS ATHLETICS</li>
-              <li>595-MENS BOOTS</li>
-            </ul>
-
-            <ul id="ladiesFootwear" class="subDepartments">
-              <label for="ladiesFootwear" class="subDepartLabel"
-                >LADIES FOOTWEAR</label
-              >
-              <li>900-LADIES FOOTWEAR</li>
-              <li>538-MISSES BOOTS</li>
-              <li>540 EC JUNIOR BOOTS</li>
-              <li>541-EC JR SANDALS</li>
-              <li>542-EC JR CLSD SHOE</li>
-              <li>543-LADIES ATHLETIC</li>
-              <li>552-EC MS CLSD SHOE</li>
-              <li>553-EC MISSES SNDLS</li>
-              <li>557-WC JUNIOR BOOTS</li>
-              <li>558-WC JR SANDALS</li>
-              <li>559-WC JR CLSD SHOE</li>
-              <li>571-COMFORT SANDALS</li>
-              <li>573-LDS ATHLEISURE</li>
-              <li>574-LDS ATH SANDALS</li>
-              <li>576-MS ATHLEISURE</li>
-              <li>577-WC MS CLSD SHOE</li>
-              <li>578-WC MISSES SNDLS</li>
-              <li>585-EC JRATHLEISURE</li>
-              <li>586-WC JRATHLEISURE</li>
-              <li>587-ECL FLIPFLOPS</li>
-              <li>588-WCL FLIPFLOPS</li>
-            </ul>
-          </ul>
-        </div>
-
-        <div class="YouthDepList">
-          <ul id="YouthHead">
-            <label for="YouthHead" id="YouthLabel" class="Department"
-              >YOUTH</label
-            >
-            <ul id="boysYouth" class="subDepartments">
-              <label for="boysYouth" class="subDepartLabel">BOYS</label>
-              <li>005 - BOYS</li>
-              <li>325-BOY 4-7 BOTTOMS</li>
-              <li>326-BOY 4-7 TOPS</li>
-              <li>327-BOYS UNDERWEAR</li>
-              <li>330-BOY 8-20 TEES</li>
-              <li>331-BOY 8-20 PANTS</li>
-              <li>333-BOY 8-20 DENIM</li>
-              <li>334-KIDS TEAM APP</li>
-              <li>335-BOY ACTIVE 4-7</li>
-              <li>336-BOY ACT 8-20 TO</li>
-              <li>337-BOY 4-20 OTRWR</li>
-              <li>338-BOY 4-20 SWIM</li>
-              <li>339-BOY 8-20 SHORTS</li>
-              <li>340-BOYS SOCKS</li>
-              <li>342-BOY 4-7 SETS</li>
-              <li>343-BOY 8-20 TOPS</li>
-              <li>344-BOY ACT 8-20 BT</li>
-              <li>397-BOYS SLEEPWEAR</li>
-              <li>399-BOY ACCESS</li>
-            </ul>
-
-            <ul id="babyYouth" class="subDepartments">
-              <label for="babyYouth" class="subDepartLabel">BABY</label>
-              <li>019-BABY</li>
-              <li>370-GEAR AND TRAVEL</li>
-              <li>374-TG DRESSES</li>
-              <li>376-FEEDING</li>
-              <li>377-BABY CARE</li>
-              <li>378-TB ACTIVE</li>
-              <li>379-TG SEPARATES</li>
-              <li>380-TB SEASONAL</li>
-              <li>381-TB SEPARATES</li>
-              <li>390-TG ACTIVE</li>
-              <li>391-TG SEASONAL</li>
-              <li>602-NEWBORN BOYS</li>
-              <li>603-NEWBORN GIRLS</li>
-              <li>605-INFANT BOYS</li>
-              <li>606-INFANT GIRLS</li>
-              <li>607-INFANT SHOES</li>
-              <li>608-TB SETS</li>
-              <li>609-TG SETS</li>
-              <li>610-BABY TOYS+GIFTS</li>
-              <li>612-LAYETTE SOFTLIN</li>
-              <li>614-LAYETTE ACCESS</li>
-            </ul>
-
-            <ul id="girlsYouth" class="subDepartments">
-              <label for="girlsYouth" class="subDepartLabel">GIRLS</label>
-              <li>030-GIRLS</li>
-              <li>300-GIRL 4-6X TOPS</li>
-              <li>301-GIRL 4-6X BTTMS</li>
-              <li>302-GIRL 4-6X SETS</li>
-              <li>303-GIRL 4-6X ACTIV</li>
-              <li>304-GIRL 4-6X DRESS</li>
-              <li>305-GIRL SOCKS</li>
-              <li>306-GIRL BRA PANTIE</li>
-              <li>307-GIRL SLEEPWEAR</li>
-              <li>308-KIDS LIC ACCESS</li>
-              <li>309-GIRLS ACCESS</li>
-              <li>311-BACKPACKS</li>
-              <li>312-GIRL 4-16 SWIM</li>
-              <li>313-GIRL 4-16 OUTWR</li>
-              <li>316-GIRL 7-16 TOPS</li>
-              <li>317-GIRL 7-16 SHORT</li>
-              <li>318-GIRL 7-16 BOTTO</li>
-              <li>319-GIRL 7-16 DENIM</li>
-              <li>320-GIRL 7-16 SETS</li>
-              <li>321-GIRL 7-16 ACTIV</li>
-              <li>322-GIRL 7-16 DRESS</li>
-              <li>324-CHILDRENS Q LIN</li>
-            </ul>
-          </ul>
-        </div>
-
-        <div class="HomeDepList">
-          <ul id="HomeHead">
-            <label for="HomeHead" id="HomeLabel" class="Department">HOME</label>
-            <ul id="domestics" class="subDepartments">
-              <label for="domestics" class="subDepartLabel">DOMESTICS</label>
-              <li>006 - Domestics</li>
-              <li>412-MATTRESS PADS</li>
-              <li>414-BED PILLOWS</li>
-              <li>415-TABLE+ KITCHEN</li>
-              <li>416-SHEET SETS</li>
-              <li>417-DECOR PILLOWS</li>
-              <li>418-TOP OF BED</li>
-              <li>419-THROW-BLANKET</li>
-              <li>420-TOWELS</li>
-              <li>430-BEACH</li>
-              <li>437-RUGS</li>
-              <li>439-BATH RUGS</li>
-              <li>440-BATH ACCESS</li>
-              <li>441-WINDOW</li>
-              <li>444-PATIO CUSHIONS</li>
-              <li>447-ROOM SIZE RUGS</li>
-            </ul>
-
-            <ul id="homeDecor" class="subDepartments">
-              <label for="homeDecor" class="subDepartLabel">HOME DECOR</label>
-              <li>011-HOME DECOR</li>
-              <li>421-EC GLASS</li>
-              <li>429-EC ACC FRNITURE</li>
-              <li>431-EC HOME ACCENTS</li>
-              <li>433-EC REGIONAL DEC</li>
-              <li>436-EC LIGHTING</li>
-              <li>442-EC DECOR GIFTS</li>
-              <li>443-EC WALL DECOR</li>
-              <li>445-FRAMES</li>
-              <li>448-EC FURNITURE</li>
-              <li>449-EC FRAMED ART</li>
-              <li>626-WC GLASS</li>
-              <li>627-WC HOME ACCENTS</li>
-              <li>628-WC REGIONAL DEC</li>
-              <li>629-WC DECOR GIFTS</li>
-              <li>636-HC ACCENT FURN</li>
-              <li>637-HC OUTDR FURN</li>
-              <li>638-HC LIGHTING</li>
-              <li>643-OUTDOOR FURNITU</li>
-              <li>645-WC WALL DECOR</li>
-              <li>646-WC ACCNT FURNTR</li>
-              <li>647-WC FURNITURE</li>
-              <li>648-WC FRAMED ART</li>
-            </ul>
-
-            <ul id="housewares" class="subDepartments">
-              <label for="housewares" class="subDepartLabel">HOUSEWARES</label>
-              <li>015-HOUSEWARES</li>
-              <li>400-GADGETS</li>
-              <li>401-COOKWARE</li>
-              <li>408-BAKEWARE</li>
-              <li>410-SMALL APPLIANCE</li>
-              <li>423-KITCHEN DECOR</li>
-              <li>424-DRNKWARE-FLTWAR</li>
-              <li>425-ACRYLIC TABLETP</li>
-              <li>560-TOTES-HYDRATION</li>
-              <li>580-FOOD PREP</li>
-              <li>582-FOOD STORAGE</li>
-            </ul>
-
-            <ul id="consumables" class="subDepartments">
-              <label for="consumables" class="subDepartLabel"
-                >CONSUMABLES</label
-              >
-              <li>017-CONSUMABLES</li>
-              <li>299-GOURMET MARKET</li>
-              <li>345-SWEETS</li>
-              <li>346-SEAS SWEET+SNKS</li>
-              <li>347-CONSUMABLES Q L</li>
-              <li>402-GOURMET FOOD</li>
-              <li>404-SNACKS</li>
-              <li>562-GOURMET CHOCLTE</li>
-            </ul>
-
-            <ul id="seasonalGifts" class="subDepartments">
-              <label for="seasonalGifts" class="subDepartLabel"
-                >SEASONAL GIFTS</label
-              >
-              <li>023-SEASONAL& GIFTS</li>
-              <li>770-GIFT WRAP</li>
-              <li>771-STATIONERY</li>
-              <li>773-CRAFT</li>
-              <li>775-BOOKS</li>
-              <li>776-GARDEN DECOR</li>
-              <li>777-GARDEN ACCENTS</li>
-              <li>778-XMAS FLORAL</li>
-              <li>779-FLORAL</li>
-              <li>780-TRIM THE HOME</li>
-              <li>781-SEAS HOME DECOR</li>
-              <li>782-OFFICE</li>
-              <li>783-XMAS STATIONERY</li>
-              <li>784-EC CANDLES</li>
-              <li>785-WC CANDLES</li>
-              <li>786-HOME QUINE</li>
-            </ul>
-
-            <ul id="homeMain" class="subDepartments">
-              <label for="homeMain" class="subDepartLabel"
-                >HOME MAINTENANCE</label
-              >
-              <li>040-HOME MAINTENANCE</li>
-              <li>940-BASKETS</li>
-              <li>942-CLOSET STORAGE</li>
-              <li>943-ACCESS STORAGE</li>
-              <li>944-LAUNDRY</li>
-              <li>945-KITCHEN ORG</li>
-              <li>946-GARAGE AUTO</li>
-              <li>947-KTCHN MNT CLEAN</li>
-            </ul>
-          </ul>
-        </div>
-
-        <div class="HTDepList">
-          <ul id="HTHead">
-            <label for="HTHead" id="HTLabel" class="Department"
-              >HARDLINES/TOYS</label
-            >
-            <ul id="hardlines" class="subDepartments">
-              <label for="hardlines" class="subDepartLabel">HARDLINES</label>
-              <li>020 - HARDLINES</li>
-              <li>020-HARDLINES</li>
-              <li>650-ELECTRONICS</li>
-              <li>652-MENS GIFTS</li>
-              <li>656-TRAVEL</li>
-              <li>657-LUGGAGE</li>
-              <li>790-DOG TOYS</li>
-              <li>791-DOG TREATS+FOOD</li>
-              <li>792-WASTE AND GROOM</li>
-              <li>793-PET BOWL STORAG</li>
-              <li>794-COLLARS + LEASH</li>
-              <li>795-PET ACCESSORIES</li>
-              <li>796-CAT</li>
-              <li>797-DOG BEDS</li>
-              <li>798-PET SOLUTIONS</li>
-              <li>799-SEASONAL PET</li>
-            </ul>
-
-            <ul id="toysSport" class="subDepartments">
-              <label for="toySport" class="subDepartLabel"
-                >TOYS AND SPORT</label
-              >
-              <li>025-TOYS AND SPORT</li>
-              <li>382-PRESCHOOL TOYS</li>
-              <li>383-BOYS TOYS</li>
-              <li>384-GIRLS TOYS</li>
-              <li>385-SEASONAL TOYS</li>
-              <li>386-CHILDREN BOOKS</li>
-              <li>387-SPORTING GOODS</li>
-              <li>388-FITNESS</li>
-              <li>389-GAMES</li>
-              <li>621-GAMES AND PLUSH</li>
-            </ul>
-          </ul>
-        </div>
-      </div>
+      <div class="popuptext" id="myPopup"></div>
     </div>
   </body>
   <script src="index.js" defer></script>

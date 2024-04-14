@@ -1,29 +1,56 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14pt;
+}
+.formSpace {
+  padding: 10px;
 }
 
-input {
-  border-radius: 5px;
+#headerTop {
+  display: flex;
+}
+
+#goBack {
+  border-radius: 10px;
+  height: 30px;
+  width: 100px;
+}
+
+button {
+  border-radius: 50px;
+  height: 70px;
+  width: 330px;
+  font-size: 20px;
+  color: black;
+}
+
+.UserInput {
+  border-radius: 10px;
+  font-size: 30px;
+
+  width: 330px;
+  height: 75px;
 }
 
 .all {
-  border: solid black;
   padding: 10px;
 }
 
 .formSearch1 {
-  border: solid black 1px;
-  padding: 5px;
+  padding: 20px;
 }
 
 #Results {
   border: solid black 1px;
+  background-color: #e8e8e8;
+  font-size: 20px;
+  height: 100px;
+  align-content: center;
+  border-radius: 30px;
 }
 
 #StoreDepartments {
   border: solid black 1px;
-  padding: 1px;
 }
 .subDepartments {
   padding: 20px;
@@ -41,17 +68,27 @@ input {
   display: none;
 }
 
+select {
+  font-size: 16px;
+  color: grey;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: #eee;
+  background-color: #cecece;
+  border-radius: 10px;
   color: #444;
   cursor: pointer;
-  padding: 18px;
+  padding: 30px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */

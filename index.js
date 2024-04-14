@@ -65,7 +65,7 @@ var AIBItoS = AIBArray.map(function (li) {
   return li.textContent;
 });
 
-numberSubmit.addEventListener("submit", function searchNumber() {
+numberSubmit.addEventListener("input", function searchNumber() {
   var inputNumSearch = document.getElementById("numSearch").value.toLowerCase(); // Convert input to lowercase for case-insensitive comparison
   var results = document.getElementById("Results");
   var noresults = "No Number Found";
@@ -83,8 +83,7 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(ladiesItoS[i]);
-      results.innerHTML =
-        ladiesItoS[i] + " DEPARTMENT:  " + ladiesLabel.toUpperCase();
+      results.innerHTML = ladiesItoS[i] + "   " + ladiesLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -94,8 +93,7 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(mensItoS[i]);
-      results.innerHTML =
-        mensItoS[i] + " DEPARTMENT:  " + mensLabel.toUpperCase();
+      results.innerHTML = mensItoS[i] + "   " + mensLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -105,8 +103,7 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(AIBItoS[i]);
-      results.innerHTML =
-        AIBItoS[i] + " DEPARTMENT:  " + AIBLabel.toUpperCase();
+      results.innerHTML = AIBItoS[i] + "   " + AIBLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -116,8 +113,7 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(ShoesItoS[i]);
-      results.innerHTML =
-        ShoesItoS[i] + " DEPARTMENT:  " + ShoesLabel.toUpperCase();
+      results.innerHTML = ShoesItoS[i] + "   " + ShoesLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -127,8 +123,7 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(YouthItoS[i]);
-      results.innerHTML =
-        YouthItoS[i] + " DEPARTMENT:  " + YouthLabel.toUpperCase();
+      results.innerHTML = YouthItoS[i] + "   " + YouthLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -138,8 +133,7 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(HomeItoS[i]);
-      results.innerHTML =
-        HomeItoS[i] + " DEPARTMENT:  " + HomeLabel.toUpperCase();
+      results.innerHTML = HomeItoS[i] + "   " + HomeLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -149,7 +143,7 @@ numberSubmit.addEventListener("submit", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(HTItoS[i]);
-      results.innerHTML = HTItoS[i] + " DEPARTMENT:  " + HTLabel.toUpperCase();
+      results.innerHTML = HTItoS[i] + "   " + HTLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
