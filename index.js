@@ -83,7 +83,11 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(ladiesItoS[i]);
-      results.innerHTML = ladiesItoS[i] + "   " + ladiesLabel.toUpperCase();
+      results.innerHTML =
+        "Product: " +
+        ladiesItoS[i] +
+        " Department: " +
+        ladiesLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -300,3 +304,5 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+console.log("Hello\nWorld");
