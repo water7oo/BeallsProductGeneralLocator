@@ -4,9 +4,9 @@
 //Convert the list into an array of items
 //Take that current array and say if the users submission equals the first 3 elements on the array list
 
-const numberSubmit = document.getElementById("formidSearch");
-const departmentSelect = document.getElementById("departmentSelect");
-const keySearcher = document.getElementById("productSearch");
+const numberSubmit = document.getElementById("formidSearch2");
+const departmentSelect = document.getElementById("departmentSelect2");
+const keySearcher = document.getElementById("productSearch2");
 const totalDepartments = document.getElementById("StoreDepartments");
 const storeRegistry = [
   ladiesItoS,
@@ -66,7 +66,7 @@ var AIBItoS = AIBArray.map(function (li) {
 });
 
 numberSubmit.addEventListener("input", function searchNumber() {
-  var inputNumSearch = document.getElementById("numSearch").value.toLowerCase(); // Convert input to lowercase for case-insensitive comparison
+  var inputNumSearch = document.getElementById("numSearch2").value.toLowerCase(); // Convert input to lowercase for case-insensitive comparison
   var results = document.getElementById("Results");
   var noresults = "No Number Found";
   var ladiesLabel = document.getElementById("ladieslabel").innerHTML;
@@ -264,7 +264,7 @@ keySearcher.addEventListener("input", function KeywordSearch(event) {
   var storeListing = document.querySelectorAll("ul");
 
   var KeywordInput = document
-    .getElementById("keywordSearch")
+    .getElementById("keywordSearch2")
     .value.toLowerCase();
 
   storeListing.forEach(function (ulElement) {
@@ -330,8 +330,8 @@ window.onscroll = function () {
 
 function scrollFunction() {
   if (
-    document.body.scrollTop > 300 ||
-    document.documentElement.scrollTop > 300
+    document.body.scrollTop > 250 ||
+    document.documentElement.scrollTop > 250
   ) {
     document.getElementById("navbar").style.top = "0";
   } else {

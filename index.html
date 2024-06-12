@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
@@ -10,67 +10,144 @@
     <link rel="shortcut icon" type="image/png" href="favicon.ico" />
   </head>
   <body>
-    <div id="headerTop">
-      <!-- <button id="goBack">back</button> -->
-      <h1>PRODUCT LOCATOR</h1>
+
+
+    <div id="navbar">
+      <div id = "navbarDiv">
+        <div class="formSearch1">
+          <div id="buttonDiv">
+            <button id="goBack">INFO</button>
+            <div id="buttondivSpace"></div>
+            <button id="ClearContents">CLEAR</button>
+          </div>
+        </div>
+          <!-- Specific search -->
+      <form method="dialog" id="formidSearch" class = "syncformidSearch">
+        <label for="numSearch"></label>
+        <input
+          type="search"
+          class="UserInput"
+          id="numSearch"
+          placeholder="Results Input"
+        />
+      </form>
+      <!--  -->
+      <div id="resultsdivDiv"></div>
+      <!-- Results -->
+      <div id="Results">
+        <center>
+          <p>Specific Product</p>
+        </center>
+      </div>
+              <!-- Department Listing -->
+              <div class="formSpace"></div>
+              <form method="dialog" id="productSearch">
+                <label for="productSearch"></label>
+                <input
+                  type="search"
+                  class="UserInput"
+                  id="keywordSearch"
+                  placeholder="Department Listing"
+                  inputmode="numeric"
+                />
+              </form>
+              <!--  -->
+      
+              <!-- Filter Contents -->
+              <form method="dialog">
+                <label for="cars"></label>
+                <select
+                  name="departments"
+                  id="departmentSelect"
+                  class="filterContents"
+                >
+                  <option value="ALL">ALL</option>
+                  <option value="None">None</option>
+                  <option value="Ladies">LADIES</option>
+                  <option value="Mens">MENS</option>
+                  <option value="Accessories">ACCESSORIES</option>
+                  <option value="Home">HOME</option>
+                  <option value="Youth">YOUTH</option>
+                  <option value="Shoes">FOOTWEAR</option>
+                  <option value="HardlineToys">HARDLINE/TOYS</option>
+                </select>
+              </form>
+              <!--  -->
+      </div>
     </div>
-
+    
     <div class="all">
-      <div class="formSearch1">
-        <button id="ClearContents">CLEAR</button>
-        <!-- Filter Contents -->
-        <div class="formSpace"></div>
-        <form method="dialog">
-          <label for="cars"></label>
-          <select name="departments" id="departmentSelect" class="UserInput">
-            <option value="ALL">ALL</option>
-            <option value="None">None</option>
-            <option value="Ladies">LADIES</option>
-            <option value="Mens">MENS</option>
-            <option value="Accessories">ACCESSORIES</option>
-            <option value="Home">HOME</option>
-            <option value="Youth">YOUTH</option>
-            <option value="Shoes">FOOTWEAR</option>
-            <option value="HardlineToys">HARDLINE/TOYS</option>
-          </select>
-        </form>
-        <!--  -->
+      <div id="productContents">
 
-        <!-- Department NUM -->
-        <div class="formSpace"></div>
-        <form method="dialog" id="formidSearch">
-          <label for="numSearch"></label>
+
+        <div id="headerTop">
+          <h1>PRODUCT LOCATOR</h1>
+        </div>
+        <div id = "navbarDiv">
+          <div class="formSearch1">
+            <div id="buttonDiv">
+              <button id="goBack">INFO</button>
+              <div id="buttondivSpace"></div>
+              <button id="ClearContents">CLEAR</button>
+            </div>
+          </div>
+            <!-- Specific search -->
+        <form method="dialog" id="formidSearch2" class = "syncformidSearch">
+          <label for="numSearch2"></label>
           <input
             type="search"
             class="UserInput"
             id="numSearch"
-            placeholder="Department #"
-            inputmode="numeric"
+            placeholder="Results Input"
           />
         </form>
         <!--  -->
+        <div id="resultsdivDiv"></div>
+        <!-- Results -->
+        <div id="Results">
+          <center>
+            <p>Specific Product</p>
+          </center>
+        </div>
+                <!-- Department Listing -->
+                <div class="formSpace"></div>
+                <form method="dialog" id="productSearch2">
+                  <label for="productSearch"></label>
+                  <input
+                    type="search"
+                    class="UserInput"
+                    id="keywordSearch"
+                    placeholder="Department Listing"
+                    inputmode="numeric"
+                  />
+                </form>
+                <!--  -->
+        
+                <!-- Filter Contents -->
+                <form method="dialog">
+                  <label for="cars"></label>
+                  <select
+                    name="departments"
+                    id="departmentSelect2"
+                    class="filterContents"
+                  >
+                    <option value="ALL">ALL</option>
+                    <option value="None">None</option>
+                    <option value="Ladies">LADIES</option>
+                    <option value="Mens">MENS</option>
+                    <option value="Accessories">ACCESSORIES</option>
+                    <option value="Home">HOME</option>
+                    <option value="Youth">YOUTH</option>
+                    <option value="Shoes">FOOTWEAR</option>
+                    <option value="HardlineToys">HARDLINE/TOYS</option>
+                  </select>
+                </form>
+                <!--  -->
+        </div>
 
-        <!-- Specific Search -->
-        <div class="formSpace"></div>
-        <form method="dialog" id="productSearch">
-          <label for="productSearch"></label>
-          <input
-            type="search"
-            class="UserInput"
-            id="keywordSearch"
-            placeholder="Specific Search"
-            inputmode="numeric"
-          />
-        </form>
-        <!--  -->
-      </div>
-      <div id="Results">
-        <center>
-          <p>"Type into specific search to get specific product"</p>
-        </center>
-      </div>
 
-      <button type="button" class="collapsible">SHOW DEPARTMENTS</button>
+
+      <button type="button" class="collapsible">DEPARTMENT LISTING</button>
       <div class="content">
         <div id="StoreDepartments">
           <ul id="storeDepartmentsListing"></ul>
@@ -747,7 +824,7 @@
           <div class="HTDepList">
             <ul id="HTHead">
               <label for="HTHead" id="HTLabel" class="Department"
-                >HARDLINES/TOYS/PET</label
+                >HARDLINES/TOYS</label
               >
               <ul id="hardlines" class="subDepartments">
                 <label for="hardlines" class="subDepartLabel">HARDLINES</label>

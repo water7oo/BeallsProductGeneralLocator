@@ -2,51 +2,117 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12pt;
 }
-.formSpace {
-  padding: 2px;
+
+#navbarDiv {
+  border: solid rgb(255, 0, 0);
 }
 
+#navbar {
+  background-color: #ffffff; /* Black background color */
+  position: fixed; /* Make it stick/fixed */
+  top: -50px; /* Hide the navbar 50 px outside of the top view */
+  width: 100%; /* Full width */
+  transition: top 0.7s; /* Transition effect when sliding down (and up) */
+}
+
+/* Style the navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.formSpace {
+  padding: 2px;
+  border: solid rgb(0, 191, 255);
+}
+
+/* #resultsdivDiv {
+  border: solid black;
+} */
+
+#bottomFormSpace {
+  border: solid black;
+  padding: 10px;
+}
+
+#buttondivSpace {
+  border: solid black;
+  padding: 20px;
+}
 #headerTop {
+  height: 100%;
+  border: solid black;
+}
+
+.buttondivSpace {
+  padding: 100px;
+  border: solid black 1px;
+}
+
+/* #resultsSearchDIV {
+  border: solid rgb(255, 0, 0);
+} */
+
+#buttonDiv {
   display: flex;
 }
 
-#goBack {
-  border-radius: 10px;
-  height: 30px;
-  width: 100px;
+#productContents {
+  border: solid black;
+  padding: 10px;
 }
-
 button {
-  border-radius: 50px;
-  height: 70px;
-  width: 330px;
-  font-size: 20px;
+  border-radius: 100px;
+  outline: solid 2px;
+  height: 35px;
+  width: 200px;
+  font-size: 15px;
   color: black;
 }
 
 .UserInput {
   border-radius: 10px;
   font-size: 30px;
+  outline: solid black 2px;
+  width: 98%;
+  height: 40px;
+}
 
-  width: 330px;
-  height: 75px;
+.filterContents {
+  border-radius: 10px;
+  font-size: 20px;
+  outline: solid black 1px;
+  width: 98%;
+  height: 45px;
 }
 
 .all {
-  padding: 10px;
+  padding: 20px;
 }
 
 .formSearch1 {
-  padding: 20px;
+  padding: 2px;
+  border: solid black;
 }
 
 #Results {
   border: solid black 1px;
   background-color: #e8e8e8;
   font-size: 20px;
-  height: 100px;
+  height: 50px;
+  width: 98%;
   align-content: center;
-  border-radius: 30px;
+  border-radius: 10px;
+  color: rgb(165, 165, 165);
 }
 
 #StoreDepartments {
@@ -71,11 +137,11 @@ button {
 select {
   font-size: 16px;
   color: grey;
-  border: 1px solid #ccc;
-  height: 34px;
-  -webkit-appearance: none;
+  border: solid #ccc;
+  height: 40px;
+  /* -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
+  appearance: none; */
 }
 
 /* Style the button that is used to open and close the collapsible content */
@@ -86,7 +152,8 @@ select {
   cursor: pointer;
   padding: 30px;
   width: 100%;
-  border: none;
+  height: 120px;
+  border: solid black;
   text-align: left;
   outline: none;
 }
