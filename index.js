@@ -317,27 +317,23 @@ if (coll.length > 0) {
 // When the user scrolls down 20px from the top of the document, slide down the navbar
 // When the user scrolls to the top of the page, slide up the navbar (50px out of the top view)
 window.onload = function () {
-  document.getElementById("navbar").style.top = "-500px";
+  const navbar = document.getElementById("navbar");
 
   window.onscroll = function () {
     scrollFunction();
   };
-};
 
-window.onscroll = function () {
-  scrollFunction();
-};
-
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 300 ||
-    document.documentElement.scrollTop > 300
-  ) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-500px";
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      navbar.classList.add("fixed");
+    } else {
+      navbar.classList.remove("fixed");
+    }
   }
-}
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".synchformidSearch");
