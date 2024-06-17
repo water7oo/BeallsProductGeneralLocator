@@ -3,25 +3,43 @@ body {
   font-size: 12pt;
 }
 
-#navbarDiv {
+/* #navbarDiv {
   border: solid rgb(255, 0, 0);
-}
+} */
 
 #navbar {
   background-color: #ffffff; /* White background color */
   width: 100%; /* Width */
-  transition: top 1s; /* Transition effect when sliding down (and up) */
+  transition: top 0.7s, width 0.7s;
+  z-index: 1;
 }
 
 #navbar.fixed {
   position: fixed; /* Make it stick/fixed */
+  width: 85%; /* Adjust width when fixed */
   top: 0; /* Position it at the top */
   z-index: 1000; /* Ensure it stays on top */
-  width: 80%;
+  transition: top 0.7s, width 0.7s;
+}
+
+/* Optional: Style for different nav content */
+.fixed-content {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.formSpace {
+  padding: 3px;
+}
+
+.UserInput {
+  border-radius: 10px;
+  font-size: 20px;
+  outline: solid black 2px;
+  width: 98%;
+  height: 40px;
 }
 
 /* Style the navbar links */
-
 #navbar a {
   float: left;
   display: block;
@@ -32,13 +50,13 @@ body {
 }
 
 #navbar a:hover {
-  background-color: #000000;
+  background-color: #ddd;
   color: black;
 }
 
 .formSpace {
-  padding: 2px;
-  border: solid rgb(0, 191, 255);
+  padding: 7px;
+  /* border: solid rgb(0, 191, 255); */
 }
 
 /* #resultsdivDiv {
@@ -51,7 +69,7 @@ body {
 }
 
 #buttondivSpace {
-  border: solid black;
+  /* border: solid black; */
   padding: 20px;
 }
 
@@ -74,8 +92,8 @@ body {
 }
 
 #productContents {
-  border: solid black;
-  padding: 10px;
+  /* border: solid black; */
+  width: 100%;
 }
 
 button {
@@ -92,7 +110,7 @@ button {
   font-size: 30px;
   outline: solid black 2px;
   width: 98%;
-  height: 40px;
+  height: 70px;
 }
 
 .filterContents {
@@ -109,7 +127,7 @@ button {
 
 .formSearch1 {
   padding: 2px;
-  border: solid black;
+  /* border: solid black; */
 }
 
 #Results {

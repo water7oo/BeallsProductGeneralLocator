@@ -318,6 +318,13 @@ if (coll.length > 0) {
 // When the user scrolls to the top of the page, slide up the navbar (50px out of the top view)
 window.onload = function () {
   const navbar = document.getElementById("navbar");
+  const clearBtn = document.getElementById("ClearContents");
+  const navContent = document.getElementById("navbarDiv");
+
+  clearBtn.addEventListener("click", function () {
+    const forms = document.querySelectorAll("form");
+    forms.forEach((form) => form.reset());
+  });
 
   window.onscroll = function () {
     scrollFunction();
@@ -325,12 +332,14 @@ window.onload = function () {
 
   function scrollFunction() {
     if (
-      document.body.scrollTop > 50 ||
-      document.documentElement.scrollTop > 50
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
     ) {
       navbar.classList.add("fixed");
+      navContent.classList.add("fixed-content");
     } else {
       navbar.classList.remove("fixed");
+      navContent.classList.remove("fixed-content");
     }
   }
 };
