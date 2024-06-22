@@ -5,6 +5,7 @@
 //Take that current array and say if the users submission equals the first 3 elements on the array list
 
 const numberSubmit = document.getElementById("formidSearch");
+const showHideBtn = document.getElementById("ShowHide");
 const departmentSelect = document.getElementById("departmentSelect");
 const keySearcher = document.getElementById("productSearch");
 const totalDepartments = document.getElementById("StoreDepartments");
@@ -97,7 +98,12 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(mensItoS[i]);
-      results.innerHTML = mensItoS[i] + "   " + mensLabel.toUpperCase();
+      results.innerHTML =
+        "Product: " +
+        mensItoS[i] +
+        "<br>" +
+        " Department: " +
+        mensLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -107,7 +113,12 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(AIBItoS[i]);
-      results.innerHTML = AIBItoS[i] + "   " + AIBLabel.toUpperCase();
+      results.innerHTML =
+        "Product: " +
+        AIBItoS[i] +
+        "<br>" +
+        " Department: " +
+        AIBLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -117,7 +128,11 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(ShoesItoS[i]);
-      results.innerHTML = ShoesItoS[i] + "   " + ShoesLabel.toUpperCase();
+      "Product: " +
+        ShoesItoS[i] +
+        "<br>" +
+        " Department: " +
+        ShoesLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -127,7 +142,11 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(YouthItoS[i]);
-      results.innerHTML = YouthItoS[i] + "   " + YouthLabel.toUpperCase();
+      "Product: " +
+        YouthItoS[i] +
+        "<br>" +
+        " Department: " +
+        YouthLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -137,7 +156,11 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(HomeItoS[i]);
-      results.innerHTML = HomeItoS[i] + "   " + HomeLabel.toUpperCase();
+      "Product: " +
+        HomeItoS[i] +
+        "<br>" +
+        " Department: " +
+        HomeLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -147,7 +170,11 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(HTItoS[i]);
-      results.innerHTML = HTItoS[i] + "   " + HTLabel.toUpperCase();
+      "Product: " +
+        HTItoS[i] +
+        "<br>" +
+        " Department: " +
+        HTLabel.toUpperCase();
       return; // Exit the function if a match is found
     }
   }
@@ -321,6 +348,8 @@ window.onload = function () {
   const clearBtn = document.getElementById("ClearContents");
   const navContent = document.getElementById("navbarDiv");
 
+  // showHideBtn.style.display = "none";
+
   clearBtn.addEventListener("click", function () {
     const forms = document.querySelectorAll("form");
     forms.forEach((form) => form.reset());
@@ -332,32 +361,29 @@ window.onload = function () {
 
   function scrollFunction() {
     if (
-      document.body.scrollTop > 400 ||
-      document.documentElement.scrollTop > 400
+      document.body.scrollTop > 250 ||
+      document.documentElement.scrollTop > 250
     ) {
       navbar.classList.add("fixed");
       navContent.classList.add("fixed-content");
+      showHideBtn.style.display = "block";
+      // showHideBtn.classList.remove("ShowHideToggle");
     } else {
       navbar.classList.remove("fixed");
       navContent.classList.remove("fixed-content");
+      // showHideBtn.classList.add("ShowHideToggle");
+    }
+  }
+
+  showHideBtn.addEventListener("click", myFunction);
+  const navALL = document.getElementById("navALL");
+  function myFunction() {
+    if (navALL.style.display === "none" || navALL.style.display === "") {
+      navALL.style.display = "block";
+      showHideBtn.textContent = "\u21A5";
+    } else {
+      navALL.style.display = "none";
+      showHideBtn.textContent = "\u21A7";
     }
   }
 };
-
-document.addEventListener("DOMContentLoaded", function () {
-  const inputs = document.querySelectorAll(".synchformidSearch");
-
-  function syncInput(event) {
-    const value = event.target.value;
-
-    inputs.forEach((input) => {
-      if (input !== event.target) {
-        input.value = value;
-      }
-    });
-  }
-
-  inputs.forEach((input) => {
-    input.addEventListener("input", syncInput);
-  });
-});

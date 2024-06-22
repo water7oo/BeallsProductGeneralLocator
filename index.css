@@ -1,25 +1,57 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 12pt;
+
+  margin: 0;
 }
 
-/* #navbarDiv {
-  border: solid rgb(255, 0, 0);
-} */
+#BeallsTAB {
+  display: flex;
+  justify-content: center;
+  padding: none;
+}
+
+#BeallsTAB button {
+  color: rgb(0, 0, 0);
+  border: none;
+  outline: none;
+  border-radius: 1px;
+  background-color: #ffffff00;
+
+  border-bottom: 40px solid rgb(212, 212, 212);
+  border-left: 0 solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 0 solid transparent;
+  width: 200px;
+}
 
 #navbar {
-  background-color: #ffffff; /* White background color */
+  background-color: #e7e7e7; /* White background color */
   width: 100%; /* Width */
-  transition: top 0.7s, width 0.7s;
+  transition: bottom 3s;
   z-index: 1;
+  border: solid black;
+  border-radius: 20px;
 }
 
 #navbar.fixed {
   position: fixed; /* Make it stick/fixed */
-  width: 85%; /* Adjust width when fixed */
+  width: 95%; /* Adjust width when fixed */
   top: 0; /* Position it at the top */
   z-index: 1000; /* Ensure it stays on top */
-  transition: top 0.7s, width 0.7s;
+  transition: height 3s;
+  .formSpace {
+    padding: 2px;
+  }
+  #Results {
+    height: 40px;
+    font-size: 10pt;
+  }
+
+  .UserInput {
+    height: 40px;
+    font-size: 20pt;
+  }
 }
 
 /* Optional: Style for different nav content */
@@ -73,6 +105,37 @@ body {
   padding: 20px;
 }
 
+#ShowHide {
+  border: solid 2px black;
+  bottom: 2px;
+  outline: none;
+  width: 100px;
+  height: 30px;
+  padding: 1px;
+  font-size: 20pt;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  background-color: none;
+  box-sizing: content-box;
+  content: "\02795";
+}
+
+#navALL {
+  display: block;
+  /* border: solid red; */
+  padding: 1px;
+}
+
+/* #ShowHideDiv {
+  border: solid blue;
+} */
+
+.ShowHideToggle {
+  display: none;
+  transition: display 3s;
+}
 #headerTop {
   height: 100%;
   border: solid black;
@@ -122,7 +185,7 @@ button {
 }
 
 .all {
-  padding: 20px;
+  padding: 10px;
 }
 
 .formSearch1 {
@@ -138,7 +201,7 @@ button {
   width: 98%;
   align-content: center;
   border-radius: 10px;
-  color: rgb(165, 165, 165);
+  color: rgb(98, 98, 98);
 }
 
 #StoreDepartments {

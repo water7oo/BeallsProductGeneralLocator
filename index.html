@@ -11,74 +11,89 @@
   </head>
   <body>
     
+
+    <!-- <div id="BeallsTAB">
+      <div id="PLDiv">
+        <button id="ProductLocatorBtn">Product Locator</button>
+      </div>
+      <div id="TCDiv">
+        <button id="TaggingCenterBtn">Tagging Center</button>
+      </div>
+    </div> -->
+
+
+
     <div class="all">
       <div id="productContents">
         <h1><center>PRODUCT LOCATOR</center></h1>
         <div id="navbar">
-      <div id = "navbarDiv">
-        <div class="formSearch1">
-          <div id="buttonDiv">
-            <button id="goBack">INFO</button>
-            <div id="buttondivSpace"></div>
-            <button id="ClearContents" type="reset">CLEAR</button>
+          <div id="navALL">
+        <div id = "navbarDiv">
+          <div class="formSearch1">
+            <div id="buttonDiv">
+              <button id="goBack">INFO</button>
+              <div id="buttondivSpace"></div>
+              <button id="ClearContents" type="reset">CLEAR</button>
+            </div>
           </div>
+            <!-- Specific search -->
+        <form method="dialog" id="formidSearch" class = "syncformidSearch">
+          <label for="numSearch"></label>
+          <input
+            type="search"
+            class="UserInput"
+            id="numSearch"
+            placeholder="Specific Product #"
+            inputmode="numeric"
+          />
+        </form>
+        <!--  -->
+        <div class="formSpace"></div>
+        <div id="resultsdivDiv"></div>
+        <!-- Results -->
+        <div id="Results">
+          <center>
+            <p>Product Will Display Here</p>
+          </center>
         </div>
-          <!-- Specific search -->
-      <form method="dialog" id="formidSearch" class = "syncformidSearch">
-        <label for="numSearch"></label>
-        <input
-          type="search"
-          class="UserInput"
-          id="numSearch"
-          placeholder="Results Input"
-        />
-      </form>
-      <!--  -->
-      <div class="formSpace"></div>
-      <div id="resultsdivDiv"></div>
-      <!-- Results -->
-      <div id="Results">
-        <center>
-          <p>Specific Product</p>
-        </center>
-      </div>
-              <!-- Department Listing -->
-              <div class="formSpace"></div>
-              <form method="dialog" id="productSearch">
-                <label for="productSearch"></label>
-                <input
-                  type="search"
-                  class="UserInput"
-                  id="keywordSearch"
-                  placeholder="Department Listing"
-                  inputmode="numeric"
-                />
-              </form>
-              <!--  -->
-              <div class="formSpace"></div>
-              <!-- Filter Contents -->
-              <form method="dialog">
-                <label for="cars"></label>
-                <select
-                  name="departments"
-                  id="departmentSelect"
-                  class="filterContents"
-                >
-                  <option value="ALL">ALL</option>
-                  <option value="None">None</option>
-                  <option value="Ladies">LADIES</option>
-                  <option value="Mens">MENS</option>
-                  <option value="Accessories">ACCESSORIES</option>
-                  <option value="Home">HOME</option>
-                  <option value="Youth">YOUTH</option>
-                  <option value="Shoes">FOOTWEAR</option>
-                  <option value="HardlineToys">HARDLINE/TOYS</option>
-                </select>
-              </form>
-              <!--  -->
-      </div>
-    </div>
-
+                <!-- Department Listing -->
+                <div class="formSpace"></div>
+                <form method="dialog" id="productSearch">
+                  <label for="productSearch"></label>
+                  <input
+                    type="search"
+                    class="UserInput"
+                    id="keywordSearch"
+                    placeholder="Department Search"
+                  />
+                </form>
+                <!--  -->
+                <div class="formSpace"></div>
+                <!-- Filter Contents -->
+                <form method="dialog">
+                  <label for="cars"></label>
+                  <select
+                    name="departments"
+                    id="departmentSelect"
+                    class="filterContents"
+                  >
+                    <option value="ALL">ALL</option>
+                    <option value="None">None</option>
+                    <option value="Ladies">LADIES</option>
+                    <option value="Mens">MENS</option>
+                    <option value="Accessories">ACCESSORIES</option>
+                    <option value="Home">HOME</option>
+                    <option value="Youth">YOUTH</option>
+                    <option value="Shoes">FOOTWEAR</option>
+                    <option value="HardlineToys">HARDLINE/TOYS</option>
+                  </select>
+                </form>
+                
+                <!--  -->
+        </div>
+          </div>
+          <div id="ShowHideDiv"><center><button id="ShowHide">&#8613</button></center></div>
+        </div>
 
     <div class="formSpace"></div>
       <button type="button" class="collapsible">DEPARTMENT LISTING</button>
