@@ -4,6 +4,8 @@
 //Convert the list into an array of items
 //Take that current array and say if the users submission equals the first 3 elements on the array list
 
+var isReset = false;
+console.log(isReset);
 const numberSubmit = document.getElementById("formidSearch");
 const showHideBtn = document.getElementById("ShowHide");
 const departmentSelect = document.getElementById("departmentSelect");
@@ -87,6 +89,7 @@ numberSubmit.addEventListener("input", function searchNumber() {
       results.innerHTML =
         "Product: " +
         ladiesItoS[i] +
+        "<br>" +
         " Department: " +
         ladiesLabel.toUpperCase();
       return; // Exit the function if a match is found
@@ -128,7 +131,8 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(ShoesItoS[i]);
-      "Product: " +
+      results.innerHTML =
+        "Product: " +
         ShoesItoS[i] +
         "<br>" +
         " Department: " +
@@ -142,7 +146,8 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(YouthItoS[i]);
-      "Product: " +
+      results.innerHTML =
+        "Product: " +
         YouthItoS[i] +
         "<br>" +
         " Department: " +
@@ -156,7 +161,8 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(HomeItoS[i]);
-      "Product: " +
+      results.innerHTML =
+        "Product: " +
         HomeItoS[i] +
         "<br>" +
         " Department: " +
@@ -170,7 +176,8 @@ numberSubmit.addEventListener("input", function searchNumber() {
     // Extract first three characters and convert to lowercase
     if (firstThreeCharacters === inputNumSearch) {
       console.log(HTItoS[i]);
-      "Product: " +
+      results.innerHTML =
+        "Product: " +
         HTItoS[i] +
         "<br>" +
         " Department: " +
@@ -187,7 +194,7 @@ departmentSelect.addEventListener("change", function filterItems() {
   var selectedFilter = departmentSelect.value;
 
   //Debug
-  if (selectedFilter === "None") {
+  if (selectedFilter === "NONE") {
     ladieslist.style.display = "none";
     menslist.style.display = "none";
     Youthlist.style.display = "none";
@@ -347,12 +354,35 @@ window.onload = function () {
   const navbar = document.getElementById("navbar");
   const clearBtn = document.getElementById("ClearContents");
   const navContent = document.getElementById("navbarDiv");
-
+  var selectedFilter = departmentSelect.value;
+  var results = document.getElementById("Results");
   // showHideBtn.style.display = "none";
 
   clearBtn.addEventListener("click", function () {
+    var storeListing = document.querySelectorAll("ul");
+    storeListing.forEach(function (ulElement) {
+      ulElement.style.display = "block";
+
+      var listings = ulElement.querySelectorAll("li");
+      listings.forEach(function (item) {
+        item.style.display = "block";
+      });
+    });
     const forms = document.querySelectorAll("form");
     forms.forEach((form) => form.reset());
+    isReset = true;
+    console.log(isReset);
+
+    ladieslist.style.display = "block";
+    menslist.style.display = "block";
+    Youthlist.style.display = "block";
+    Shoeslist.style.display = "block";
+    HTlist.style.display = "block";
+    AIBlist.style.display = "block";
+    Homelist.style.display = "block";
+
+    results.innerHTML = '"Please Enter Specific Product #"';
+    results.style.textAlign = "center";
   });
 
   window.onscroll = function () {
@@ -374,16 +404,18 @@ window.onload = function () {
       // showHideBtn.classList.add("ShowHideToggle");
     }
   }
-
-  showHideBtn.addEventListener("click", myFunction);
-  const navALL = document.getElementById("navALL");
-  function myFunction() {
-    if (navALL.style.display === "none" || navALL.style.display === "") {
-      navALL.style.display = "block";
-      showHideBtn.textContent = "\u21A5";
-    } else {
-      navALL.style.display = "none";
-      showHideBtn.textContent = "\u21A7";
-    }
-  }
 };
+
+showHideBtn.addEventListener("click", myFunction);
+
+const navALL = document.getElementById("navALL");
+function myFunction() {
+  if (navALL.style.display === "none" || navALL.style.display === "") {
+    navALL.style.display = "block";
+    showHideBtn.textContent = "\u21A5";
+  } else {
+    navALL.style.display = "none";
+    showHideBtn.textContent = "\u21A7";
+  }
+}
+console.log("\x1b[1mTEST\x1b[0m");

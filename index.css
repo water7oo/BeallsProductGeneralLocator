@@ -5,24 +5,15 @@ body {
   margin: 0;
 }
 
+#PageFooter {
+  border: solid black;
+  height: 400px;
+}
+
 #BeallsTAB {
   display: flex;
   justify-content: center;
   padding: none;
-}
-
-#BeallsTAB button {
-  color: rgb(0, 0, 0);
-  border: none;
-  outline: none;
-  border-radius: 1px;
-  background-color: #ffffff00;
-
-  border-bottom: 40px solid rgb(212, 212, 212);
-  border-left: 0 solid transparent;
-  border-right: 40px solid transparent;
-  border-top: 0 solid transparent;
-  width: 200px;
 }
 
 #navbar {
@@ -45,7 +36,7 @@ body {
   }
   #Results {
     height: 40px;
-    font-size: 10pt;
+    font-size: 12pt;
   }
 
   .UserInput {
@@ -248,6 +239,7 @@ select {
   border: solid black;
   text-align: left;
   outline: none;
+  font-size: 16pt;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
