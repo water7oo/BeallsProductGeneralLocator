@@ -1,28 +1,41 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   font-size: 12pt;
-
   margin: 0;
 }
 
-#PageFooter {
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+#topseparate {
+  padding: 25px;
   border: solid black;
+}
+#PageFooter {
   height: 400px;
+}
+
+#GithubLink {
+  height: 100px;
+  width: 100px;
+  color: red;
 }
 
 #BeallsTAB {
   display: flex;
   justify-content: center;
   padding: none;
+  border: solid black;
 }
 
 #navbar {
-  background-color: #e7e7e7; /* White background color */
+  background-color: #e3e3e3; /* White background color */
   width: 100%; /* Width */
   transition: bottom 3s;
   z-index: 1;
   border: solid black;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 #navbar.fixed {
@@ -55,13 +68,17 @@ body {
 }
 
 .UserInput {
-  border-radius: 10px;
+  border-radius: 7px;
   font-size: 20px;
   outline: solid black 2px;
   width: 98%;
   height: 40px;
 }
 
+#HomeHead {
+  border: solid black 1px;
+  border-radius: 10px;
+}
 /* Style the navbar links */
 #navbar a {
   float: left;
@@ -104,11 +121,12 @@ body {
   height: 30px;
   padding: 1px;
   font-size: 20pt;
+  color: black;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px;
-  background-color: none;
+  background-color: rgb(255, 255, 255);
   box-sizing: content-box;
   content: "\02795";
 }
@@ -142,7 +160,9 @@ body {
 } */
 
 #buttonDiv {
+  padding: 10px;
   display: flex;
+  justify-content: center;
 }
 
 #productContents {
@@ -151,19 +171,20 @@ body {
 }
 
 button {
-  border-radius: 100px;
-  outline: solid 2px;
+  border-radius: 7px;
+  outline: solid black 2px;
   height: 35px;
   width: 200px;
-  font-size: 15px;
-  color: black;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(172, 18, 18);
 }
 
 .UserInput {
   border-radius: 10px;
   font-size: 30px;
   outline: solid black 2px;
-  width: 98%;
+  width: 100%;
   height: 70px;
 }
 
@@ -189,13 +210,19 @@ button {
   background-color: #e8e8e8;
   font-size: 20px;
   height: 50px;
-  width: 98%;
+  width: 100%;
   align-content: center;
   border-radius: 10px;
   color: rgb(98, 98, 98);
 }
 
+#departmentSelect {
+  border: solid black 1px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
 #StoreDepartments {
+  font-size: 14pt;
   border: solid black 1px;
 }
 
@@ -218,7 +245,7 @@ button {
 
 select {
   font-size: 16px;
-  color: grey;
+  color: rgb(0, 0, 0);
   border: solid #ccc;
   height: 40px;
   /* -webkit-appearance: none;
@@ -229,7 +256,7 @@ select {
 /* Style the button that is used to open and close the collapsible content */
 
 .collapsible {
-  background-color: #cecece;
+  background-color: #e0e0e0;
   border-radius: 10px;
   color: #444;
   cursor: pointer;
@@ -246,7 +273,7 @@ select {
 
 .active,
 .collapsible:hover {
-  background-color: #ccc;
+  background-color: #f3f3f3;
 }
 
 .content {
