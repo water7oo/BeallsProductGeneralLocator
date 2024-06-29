@@ -358,33 +358,6 @@ window.onload = function () {
   var results = document.getElementById("Results");
   // showHideBtn.style.display = "none";
 
-  clearBtn.addEventListener("click", function () {
-    var storeListing = document.querySelectorAll("ul");
-    storeListing.forEach(function (ulElement) {
-      ulElement.style.display = "block";
-
-      var listings = ulElement.querySelectorAll("li");
-      listings.forEach(function (item) {
-        item.style.display = "block";
-      });
-    });
-    const forms = document.querySelectorAll("form");
-    forms.forEach((form) => form.reset());
-    isReset = true;
-    console.log(isReset);
-
-    ladieslist.style.display = "block";
-    menslist.style.display = "block";
-    Youthlist.style.display = "block";
-    Shoeslist.style.display = "block";
-    HTlist.style.display = "block";
-    AIBlist.style.display = "block";
-    Homelist.style.display = "block";
-
-    results.innerHTML = '"Please Enter Specific Product #"';
-    results.style.textAlign = "center";
-  });
-
   window.onscroll = function () {
     scrollFunction();
   };
@@ -405,6 +378,34 @@ window.onload = function () {
     }
   }
 };
+
+clearBtn.addEventListener("click", function () {
+  preventDefault();
+  var storeListing = document.querySelectorAll("ul");
+  storeListing.forEach(function (ulElement) {
+    ulElement.style.display = "block";
+
+    var listings = ulElement.querySelectorAll("li");
+    listings.forEach(function (item) {
+      item.style.display = "block";
+    });
+  });
+  const forms = document.querySelectorAll("form");
+  forms.forEach((form) => form.reset());
+  isReset = true;
+  console.log(isReset);
+
+  ladieslist.style.display = "block";
+  menslist.style.display = "block";
+  Youthlist.style.display = "block";
+  Shoeslist.style.display = "block";
+  HTlist.style.display = "block";
+  AIBlist.style.display = "block";
+  Homelist.style.display = "block";
+
+  results.innerHTML = '"Please Enter Specific Product #"';
+  results.style.textAlign = "center";
+});
 
 showHideBtn.addEventListener("click", myFunction);
 
