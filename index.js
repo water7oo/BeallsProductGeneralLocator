@@ -194,7 +194,7 @@ departmentSelect.addEventListener("change", function filterItems() {
   var selectedFilter = departmentSelect.value;
 
   //Debug
-  if (selectedFilter === "NONE") {
+  if (selectedFilter === "None") {
     ladieslist.style.display = "none";
     menslist.style.display = "none";
     Youthlist.style.display = "none";
@@ -418,4 +418,3 @@ function myFunction() {
     showHideBtn.textContent = "\u21A7";
   }
 }
-console.log("\x1b[1mTEST\x1b[0m");
